@@ -30,42 +30,19 @@ export default function Hero() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight mb-6 lg:mb-8 text-center lg:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight mb-8 lg:mb-10 text-center lg:text-left">
             BUILT FROM BLACK CULTURE.
             <br />
             MADE FOR THE WORLD.
           </h1>
 
-          {/* Tagline */}
-          <p className="text-off-white text-sm sm:text-base lg:text-lg max-w-2xl mb-6 lg:mb-8 text-center lg:text-left">
-            Luxury streetwear stitched with culture, confidence, and community.
-          </p>
-
           {/* Join the Movement CTA */}
-          <div className="mb-8 lg:mb-10">
+          <div>
             <Link
-              href="#about"
+              href="/join-the-movement"
               className="inline-block bg-soft-pink text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base text-center"
             >
               Join the Movement
-            </Link>
-          </div>
-
-          {/* Secondary CTA */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-6">
-            <Link
-              href="#shop"
-              className="bg-white text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base text-center w-full sm:w-auto"
-            >
-              SHOP NOW
-            </Link>
-
-            {/* Secondary Link */}
-            <Link
-              href="#about"
-              className="text-white/80 hover:text-white underline underline-offset-4 text-sm lg:text-base transition-colors"
-            >
-              Learn more about BLACK
             </Link>
           </div>
         </div>
