@@ -14,6 +14,7 @@ export interface CartItem {
 
 interface CartContextType {
   cart: CartItem[]
+  cartItems: CartItem[]
   wishlist: CartItem[]
   addToCart: (item: CartItem) => void
   addToWishlist: (item: CartItem) => void
@@ -117,6 +118,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     <CartContext.Provider
       value={{
         cart,
+        cartItems: cart,
         wishlist,
         addToCart,
         addToWishlist,

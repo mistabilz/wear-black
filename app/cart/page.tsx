@@ -195,7 +195,7 @@ export default function CartPage() {
               </button>
 
               <Link
-                href="#shop"
+                href="/"
                 className="block text-center text-sm text-white/70 hover:text-white transition-colors underline"
               >
                 Continue Shopping
