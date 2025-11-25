@@ -13,14 +13,14 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         {/* Mobile Layout */}
         <div className="flex items-center justify-between lg:hidden">
           {/* Hamburger Menu */}
           <button
             onClick={toggleMenu}
-            className="text-white hover:text-soft-pink transition-colors"
+            className="text-white hover:text-soft-pink transition-colors p-1 -ml-1"
             aria-label="Toggle menu"
           >
             <svg
@@ -48,19 +48,19 @@ export default function Navbar() {
           </button>
 
           {/* Logo */}
-          <Link href="#home" className="text-white font-bold text-xl uppercase tracking-wider">
+          <Link href="#home" className="text-white font-bold text-lg sm:text-xl uppercase tracking-wider">
             BLACK
           </Link>
 
-          {/* Icons */}
-          <div className="flex items-center gap-3">
+          {/* Icons - Reduced gap on small screens */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <Link
               href="/account/login"
-              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all active:scale-95"
               aria-label="Account"
             >
               <svg
-                className="w-4 h-4 text-white"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -75,11 +75,11 @@ export default function Navbar() {
             </Link>
             <Link
               href="/wishlist"
-              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all active:scale-95"
               aria-label="Wishlist"
             >
               <svg
-                className="w-4 h-4 text-white"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                 fill={wishlist.length > 0 ? 'currentColor' : 'none'}
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -99,11 +99,11 @@ export default function Navbar() {
             </Link>
             <Link
               href="/cart"
-              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all active:scale-95"
               aria-label="Shopping cart"
             >
               <svg
-                className="w-4 h-4 text-white"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -163,11 +163,11 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/account/login"
-              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              className="relative w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
               aria-label="Account"
             >
               <svg
-                className="w-4 h-4 text-white"
+                className="w-5 h-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -182,11 +182,11 @@ export default function Navbar() {
             </Link>
             <Link
               href="/wishlist"
-              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              className="relative w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
               aria-label="Wishlist"
             >
               <svg
-                className="w-4 h-4 text-white"
+                className="w-5 h-5 text-white"
                 fill={wishlist.length > 0 ? 'currentColor' : 'none'}
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -206,11 +206,11 @@ export default function Navbar() {
             </Link>
             <Link
               href="/cart"
-              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              className="relative w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
               aria-label="Shopping cart"
             >
               <svg
-                className="w-4 h-4 text-white"
+                className="w-5 h-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

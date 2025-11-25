@@ -9,8 +9,8 @@ export default function Hero() {
     <section id="home" className="relative w-full bg-black">
       {/* Hero Container - Height determined by image aspect ratio */}
       <div className="relative w-full max-w-[1920px] mx-auto">
-        {/* Full Hero Image - No cropping */}
-        <div className="relative w-full aspect-[16/10]">
+        {/* Full Hero Image - Responsive aspect ratio */}
+        <div className="relative w-full aspect-[4/5] sm:aspect-[3/2] lg:aspect-[16/10]">
           <Image
             src={HERO_IMAGE_PATH}
             alt="BLACK Hero - Two models in front of brick wall"
@@ -20,31 +20,29 @@ export default function Hero() {
             sizes="100vw"
           />
           
-          {/* Gradient Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent lg:from-black/80 lg:via-black/50" />
+          {/* Gradient Overlay for text readability - stronger on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/85 to-black/90 sm:bg-gradient-to-r sm:from-black/90 sm:via-black/60 sm:to-transparent lg:from-black/80 lg:via-black/50" />
         </div>
 
         {/* Content Overlay */}
         <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl">
-              {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight mb-6 lg:mb-8 drop-shadow-2xl">
-                BUILT FROM BLACK CULTURE.
-                <br />
-                MADE FOR THE WORLD.
+          <div className="w-full px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto lg:mx-0">
+              {/* Main Headline - Natural text wrapping */}
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight mb-4 sm:mb-6 lg:mb-8 drop-shadow-2xl">
+                BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.
               </h1>
 
               {/* Tagline */}
-              <p className="text-off-white text-sm sm:text-base lg:text-lg max-w-xl mb-8 lg:mb-10 drop-shadow-lg">
+              <p className="text-off-white text-sm sm:text-base lg:text-lg max-w-xl mb-6 sm:mb-8 lg:mb-10 drop-shadow-lg">
                 Luxury streetwear stitched with culture, confidence, and community.
               </p>
 
-              {/* CTA Button */}
+              {/* CTA Button - Full width on mobile */}
               <div>
                 <Link
                   href="/join-the-movement"
-                  className="inline-block bg-soft-pink text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base text-center"
+                  className="block w-full sm:inline-block sm:w-auto bg-soft-pink text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base text-center min-h-[48px] flex items-center justify-center"
                 >
                   Join the Movement
                 </Link>

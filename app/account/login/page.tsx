@@ -44,32 +44,32 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-16">
+    <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-md w-full">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl lg:text-4xl font-display font-bold uppercase tracking-wide mb-4">
+        <div className="text-center mb-8 sm:mb-10">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold uppercase tracking-wide mb-4 px-2">
             Login
           </h1>
-          <p className="text-off-white text-sm lg:text-base">
+          <p className="text-off-white text-sm sm:text-base px-2">
             Please enter your e-mail and password:
           </p>
         </div>
 
         {error && (
-          <div className="bg-red-500/20 text-red-300 p-3 rounded-md mb-6 text-center text-sm">
+          <div className="bg-red-500/20 text-red-300 p-3 sm:p-4 rounded-md mb-6 text-center text-sm">
             {error}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-off-white mb-2">
+            <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-off-white mb-2 uppercase tracking-wide">
               E-mail
             </label>
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md focus:outline-none focus:ring-2 focus:ring-soft-pink text-white"
+              className="w-full px-4 py-3 sm:py-3.5 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-soft-pink text-white text-base min-h-[48px]"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
@@ -77,13 +77,13 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-off-white mb-2">
+            <label htmlFor="password" className="block text-xs sm:text-sm font-medium text-off-white mb-2 uppercase tracking-wide">
               Password
             </label>
             <input
               type="password"
               id="password"
-              className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-md focus:outline-none focus:ring-2 focus:ring-soft-pink text-white"
+              className="w-full px-4 py-3 sm:py-3.5 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-soft-pink text-white text-base min-h-[48px]"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               required
@@ -93,7 +93,7 @@ export default function LoginPage() {
           <div className="flex justify-end">
             <Link
               href="#"
-              className="text-sm text-off-white hover:text-white transition-colors underline"
+              className="text-xs sm:text-sm text-off-white hover:text-white transition-colors underline"
             >
               Forgot password?
             </Link>
@@ -101,7 +101,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-white text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-white text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px] flex items-center justify-center"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Logging in...' : 'Login'}
@@ -109,7 +109,7 @@ export default function LoginPage() {
         </form>
 
         <div className="mt-8 text-center">
-          <p className="text-off-white text-sm">
+          <p className="text-off-white text-sm px-2">
             New customer?{' '}
             <Link
               href="/account/register"

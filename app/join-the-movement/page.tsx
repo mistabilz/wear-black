@@ -116,12 +116,12 @@ export default function JoinTheMovement() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center px-4 py-12">
+      <div className="min-h-screen bg-black flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16">
         <div className="max-w-md w-full text-center">
           <div className="mb-8">
-            <div className="w-16 h-16 bg-soft-pink rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-soft-pink rounded-full flex items-center justify-center mx-auto mb-6">
               <svg
-                className="w-8 h-8 text-black"
+                className="w-8 h-8 sm:w-10 sm:h-10 text-black"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -134,19 +134,19 @@ export default function JoinTheMovement() {
                 />
               </svg>
             </div>
-            <h1 className="text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-wide mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-wide mb-4 px-2">
               WELCOME TO THE MOVEMENT
             </h1>
-            <p className="text-off-white text-lg mb-2">
+            <p className="text-off-white text-base sm:text-lg mb-3 px-2">
               You're officially part of something bigger. A community built on culture, confidence, and purpose.
             </p>
-            <p className="text-off-white text-base">
+            <p className="text-off-white text-sm sm:text-base px-2">
               Your 10% discount is on its way to your email. Stay tuned. You'll be the first to know when the next drop arrives.
             </p>
           </div>
           <Link
             href="/"
-            className="inline-block bg-white text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm"
+            className="block w-full sm:inline-block sm:w-auto bg-white text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm min-h-[48px] flex items-center justify-center"
           >
             Back to Home
           </Link>
@@ -156,19 +156,19 @@ export default function JoinTheMovement() {
   }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-black flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-md w-full">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 sm:mb-10">
           <Link
             href="/"
-            className="inline-block text-white font-bold text-2xl uppercase tracking-wider mb-6 hover:text-soft-pink transition-colors"
+            className="inline-block text-white font-bold text-xl sm:text-2xl uppercase tracking-wider mb-6 hover:text-soft-pink transition-colors"
           >
             BLACK
           </Link>
-          <h1 className="text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-wide mb-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-wide mb-4 px-2">
             Join the Movement
           </h1>
-          <p className="text-off-white text-base lg:text-lg">
+          <p className="text-off-white text-sm sm:text-base lg:text-lg px-2">
             Sign up to be the first to know about new drops from BLACK and get 10% off your next release.
           </p>
         </div>
@@ -179,10 +179,10 @@ export default function JoinTheMovement() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
           {/* Full Name */}
           <div>
-            <label htmlFor="fullName" className="block text-white text-sm font-semibold mb-2 uppercase tracking-wide">
+            <label htmlFor="fullName" className="block text-white text-xs sm:text-sm font-semibold mb-2 uppercase tracking-wide">
               Full Name
             </label>
             <input
@@ -190,7 +190,7 @@ export default function JoinTheMovement() {
               id="fullName"
               value={formData.fullName}
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-              className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors"
+              className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/30 rounded-lg text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors min-h-[48px]"
               placeholder="Enter your full name"
             />
             {errors.fullName && (
@@ -200,7 +200,7 @@ export default function JoinTheMovement() {
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-white text-sm font-semibold mb-2 uppercase tracking-wide">
+            <label htmlFor="email" className="block text-white text-xs sm:text-sm font-semibold mb-2 uppercase tracking-wide">
               Email Address
             </label>
             <input
@@ -208,7 +208,7 @@ export default function JoinTheMovement() {
               id="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors"
+              className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/30 rounded-lg text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors min-h-[48px]"
               placeholder="your@email.com"
             />
             {errors.email && (
@@ -218,7 +218,7 @@ export default function JoinTheMovement() {
 
           {/* Password */}
           <div>
-            <label htmlFor="password" className="block text-white text-sm font-semibold mb-2 uppercase tracking-wide">
+            <label htmlFor="password" className="block text-white text-xs sm:text-sm font-semibold mb-2 uppercase tracking-wide">
               Password
             </label>
             <input
@@ -226,7 +226,7 @@ export default function JoinTheMovement() {
               id="password"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors"
+              className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/30 rounded-lg text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors min-h-[48px]"
               placeholder="Minimum 8 characters"
             />
             {errors.password && (
@@ -241,9 +241,9 @@ export default function JoinTheMovement() {
                 type="checkbox"
                 checked={formData.consent}
                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                className="mt-1 w-5 h-5 rounded border-white/30 bg-white/10 text-soft-pink focus:ring-soft-pink focus:ring-offset-0 cursor-pointer"
+                className="mt-0.5 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded border-white/30 bg-white/10 text-soft-pink focus:ring-soft-pink focus:ring-offset-0 cursor-pointer"
               />
-              <span className="ml-3 text-white/90 text-sm">
+              <span className="ml-3 text-white/90 text-sm sm:text-base leading-relaxed">
                 I agree to receive product messages, updates, and discounts from BLACK.
               </span>
             </label>
@@ -256,7 +256,7 @@ export default function JoinTheMovement() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-soft-pink text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="w-full bg-soft-pink text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-h-[48px] flex items-center justify-center"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
