@@ -17,6 +17,7 @@ interface CartContextType {
   addToWishlist: (item: CartItem) => void
   removeFromCart: (id: number) => void
   removeFromWishlist: (id: number) => void
+  clearCart: () => void
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
@@ -47,6 +48,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setWishlist((prev) => prev.filter((item) => item.id !== id))
   }
 
+  const clearCart = () => {
+    setCart([])
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -56,6 +61,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         addToWishlist,
         removeFromCart,
         removeFromWishlist,
+        clearCart,
       }}
     >
       {children}

@@ -54,7 +54,27 @@ export default function Navbar() {
 
           {/* Icons */}
           <div className="flex items-center gap-3">
-            <button
+            <Link
+              href="/account/login"
+              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              aria-label="Account"
+            >
+              <svg
+                className="w-4 h-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </Link>
+            <Link
+              href="/wishlist"
               className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
               aria-label="Wishlist"
             >
@@ -72,10 +92,13 @@ export default function Navbar() {
                 />
               </svg>
               {wishlist.length > 0 && (
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-soft-pink rounded-full border-2 border-black" />
+                <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] bg-soft-pink text-black text-xs font-bold rounded-full flex items-center justify-center px-1 border-2 border-black">
+                  {wishlist.length}
+                </span>
               )}
-            </button>
-            <button
+            </Link>
+            <Link
+              href="/cart"
               className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
               aria-label="Shopping cart"
             >
@@ -97,7 +120,7 @@ export default function Navbar() {
                   {cart.length}
                 </span>
               )}
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -138,7 +161,27 @@ export default function Navbar() {
 
           {/* Icons */}
           <div className="flex items-center gap-3">
-            <button
+            <Link
+              href="/account/login"
+              className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              aria-label="Account"
+            >
+              <svg
+                className="w-4 h-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </Link>
+            <Link
+              href="/wishlist"
               className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
               aria-label="Wishlist"
             >
@@ -156,10 +199,13 @@ export default function Navbar() {
                 />
               </svg>
               {wishlist.length > 0 && (
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-soft-pink rounded-full border-2 border-black" />
+                <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] bg-soft-pink text-black text-xs font-bold rounded-full flex items-center justify-center px-1 border-2 border-black">
+                  {wishlist.length}
+                </span>
               )}
-            </button>
-            <button
+            </Link>
+            <Link
+              href="/cart"
               className="relative w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
               aria-label="Shopping cart"
             >
@@ -181,7 +227,7 @@ export default function Navbar() {
                   {cart.length}
                 </span>
               )}
-            </button>
+            </Link>
           </div>
         </div>
 

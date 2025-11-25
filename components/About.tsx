@@ -1,47 +1,47 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function About() {
   return (
     <section id="about" className="py-20 lg:py-32 bg-black text-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
-          <div className="relative h-[400px] lg:h-[600px] rounded-lg overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=1200&fit=crop&q=80"
-              alt="BLACK Brand Story"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="space-y-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-6 text-center lg:text-left">
             <h2 className="text-4xl lg:text-6xl font-display font-bold uppercase tracking-wide">
               Our Story
             </h2>
             <div className="space-y-4 text-off-white text-base lg:text-lg leading-relaxed">
               <p>
-                Born from the streets, elevated by culture. BLACK emerged from a vision to create luxury streetwear that speaks to the soul of communities often overlooked by mainstream fashion.
+                BLACK is more than a name. It's a voice, a rhythm, a movement.<br />
+                Rooted in Black culture, created for every shade, every shape, every soul bold enough to be seen.
               </p>
               <p>
-                Founded in 2020, we set out to bridge the gap between high-end fashion and authentic street culture. Every piece in our collection is designed with intention, crafted with precision, and delivered with purpose.
+                When you wear BLACK, you carry both history and the future,<br />
+                the confidence, the creativity, and the unshakable pride of a culture that shaped the world.
               </p>
               <p>
-                We believe fashion is more than clothing—it's a statement, a movement, a celebration of identity. BLACK is built for people of color, made for the world. We're not just selling clothes; we're curating a lifestyle that honors heritage while embracing the future.
+                This isn't exclusion; it's inclusion with intention.<br />
+                If you believe in our rise, you belong here.
               </p>
               <p>
-                Our commitment extends beyond the threads. We partner with artisans, support local communities, and champion sustainable practices. When you wear BLACK, you're wearing a piece of a movement that values authenticity, quality, and cultural pride.
+                BLACK is unity.<br />
+                BLACK is movement.<br />
+                BLACK is purpose.
+              </p>
+              <p>
+                Don't just wear it. Live it.<br />
+                And even if you're not Black, when you stand with us, you're part of us.
               </p>
             </div>
-            <Link
-              href="#shop"
-              className="inline-block border border-white/30 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wide text-sm font-semibold"
-            >
-              Explore Collection
-            </Link>
+            
+            {/* Sign Up Button */}
+            <div className="mt-8">
+              <Link
+                href="/join-the-movement"
+                className="inline-block bg-soft-pink text-black px-8 py-3 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base text-center"
+              >
+                Sign Up
+              </Link>
+            </div>
           </div>
         </div>
       </div>
