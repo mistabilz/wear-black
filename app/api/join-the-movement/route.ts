@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import bcrypt from 'bcrypt'
 import fs from 'fs/promises'
 import path from 'path'
 
@@ -7,7 +6,6 @@ interface Subscriber {
   id: string
   fullName: string
   email: string
-  passwordHash: string
   hasConsented: boolean
   createdAt: string
 }
@@ -51,7 +49,7 @@ async function writeSubscribers(subscribers: Subscriber[]): Promise<void> {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { fullName, email, password, consent } = body
+    const { fullName, email, consent } = body
 
     // Server-side validation
     if (!fullName || typeof fullName !== 'string' || !fullName.trim()) {
@@ -65,13 +63,6 @@ export async function POST(request: NextRequest) {
     if (!email || typeof email !== 'string' || !emailRegex.test(email)) {
       return NextResponse.json(
         { error: 'Valid email address is required' },
-        { status: 400 }
-      )
-    }
-
-    if (!password || typeof password !== 'string' || password.length < 8) {
-      return NextResponse.json(
-        { error: 'Password must be at least 8 characters' },
         { status: 400 }
       )
     }
@@ -98,15 +89,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Hash password with bcrypt (10 rounds)
-    const passwordHash = await bcrypt.hash(password, 10)
-
     // Create new subscriber object
     const newSubscriber: Subscriber = {
       id: `sub_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
       fullName: fullName.trim(),
       email: email.trim().toLowerCase(),
-      passwordHash,
       hasConsented: true,
       createdAt: new Date().toISOString(),
     }

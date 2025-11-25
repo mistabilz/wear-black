@@ -102,7 +102,6 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
         body: JSON.stringify({
           fullName: formData.fullName.trim(),
           email: formData.email.trim(),
-          password: `temp_${Date.now()}`, // Generate temporary password for modal signups
           consent: formData.consent,
         }),
       })

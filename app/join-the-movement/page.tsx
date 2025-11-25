@@ -7,13 +7,11 @@ export default function JoinTheMovement() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    password: '',
     consent: false,
   })
   const [errors, setErrors] = useState({
     fullName: '',
     email: '',
-    password: '',
     consent: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -24,7 +22,6 @@ export default function JoinTheMovement() {
     const newErrors = {
       fullName: '',
       email: '',
-      password: '',
       consent: '',
     }
     let isValid = true
@@ -42,15 +39,6 @@ export default function JoinTheMovement() {
       isValid = false
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address'
-      isValid = false
-    }
-
-    // Password validation
-    if (!formData.password) {
-      newErrors.password = 'Password is required'
-      isValid = false
-    } else if (formData.password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters'
       isValid = false
     }
 
@@ -83,7 +71,6 @@ export default function JoinTheMovement() {
         body: JSON.stringify({
           fullName: formData.fullName.trim(),
           email: formData.email.trim(),
-          password: formData.password,
           consent: formData.consent,
         }),
       })
@@ -95,13 +82,11 @@ export default function JoinTheMovement() {
         setFormData({
           fullName: '',
           email: '',
-          password: '',
           consent: false,
         })
         setErrors({
           fullName: '',
           email: '',
-          password: '',
           consent: '',
         })
       } else {
@@ -213,24 +198,6 @@ export default function JoinTheMovement() {
             />
             {errors.email && (
               <p className="mt-2 text-red-400 text-sm">{errors.email}</p>
-            )}
-          </div>
-
-          {/* Password */}
-          <div>
-            <label htmlFor="password" className="block text-white text-xs sm:text-sm font-semibold mb-2 uppercase tracking-wide">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/30 rounded-lg text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors min-h-[48px]"
-              placeholder="Minimum 8 characters"
-            />
-            {errors.password && (
-              <p className="mt-2 text-red-400 text-sm">{errors.password}</p>
             )}
           </div>
 

@@ -15,10 +15,10 @@ export default function Home() {
     const hasSeenModal = localStorage.getItem('hasSeenSignupModal')
     
     if (!hasSeenModal) {
-      // Show modal after 7 seconds or on scroll
+      // Show modal after 3 seconds or on scroll
       const timer = setTimeout(() => {
         setShowModal(true)
-      }, 7000)
+      }, 3000)
 
       const handleScroll = () => {
         if (window.scrollY > 300 && !hasSeenModal) {
