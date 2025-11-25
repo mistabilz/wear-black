@@ -2,14 +2,27 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useCart } from '@/context/CartContext'
 
 export default function Navbar() {
+  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
   const { cart, wishlist } = useCart()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
+      setIsSearchOpen(false)
+      setSearchQuery('')
+    }
   }
 
   return (
@@ -54,6 +67,26 @@ export default function Navbar() {
 
           {/* Icons - Reduced gap on small screens */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Search Icon */}
+            <button
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all active:scale-95"
+              aria-label="Search"
+            >
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
             <Link
               href="/account/login"
               className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all active:scale-95"
@@ -161,6 +194,26 @@ export default function Navbar() {
 
           {/* Icons */}
           <div className="flex items-center gap-3">
+            {/* Search Icon */}
+            <button
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="relative w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
+              aria-label="Search"
+            >
+              <svg
+                className="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
             <Link
               href="/account/login"
               className="relative w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-white hover:scale-110 transition-all"
@@ -263,6 +316,39 @@ export default function Navbar() {
               >
                 Shop
               </Link>
+            </div>
+          </div>
+        )}
+
+        {/* Search Overlay */}
+        {isSearchOpen && (
+          <div className="absolute left-0 right-0 top-full mt-0 bg-black/95 backdrop-blur-md border-t border-white/10 shadow-2xl">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+              <form onSubmit={handleSearch} className="max-w-3xl mx-auto">
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search products or stories..."
+                    autoFocus
+                    className="w-full px-6 py-4 bg-white/10 border-2 border-white/30 rounded-full text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-2 focus:ring-soft-pink/50 transition-all"
+                  />
+                  <button
+                    type="submit"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-soft-pink text-black px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-all"
+                  >
+                    Search
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsSearchOpen(false)}
+                  className="mt-4 text-white/60 hover:text-white text-sm underline mx-auto block"
+                >
+                  Close
+                </button>
+              </form>
             </div>
           </div>
         )}

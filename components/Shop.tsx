@@ -3,53 +3,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCart } from '@/context/CartContext'
+import { products } from '@/data/products'
 
 export default function Shop() {
   const { addToCart, addToWishlist, cart, wishlist } = useCart()
-  const products = [
-    {
-      id: 1,
-      name: 'Classic Tee',
-      price: '$89',
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop&q=80',
-      category: 'Tops',
-    },
-    {
-      id: 2,
-      name: 'Signature Hoodie',
-      price: '$149',
-      image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=800&fit=crop&q=80',
-      category: 'Outerwear',
-    },
-    {
-      id: 3,
-      name: 'Essential Pants',
-      price: '$129',
-      image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&h=800&fit=crop&q=80',
-      category: 'Bottoms',
-    },
-    {
-      id: 4,
-      name: 'Premium Jacket',
-      price: '$249',
-      image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=800&fit=crop&q=80',
-      category: 'Outerwear',
-    },
-    {
-      id: 5,
-      name: 'Street Sneakers',
-      price: '$179',
-      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop&q=80',
-      category: 'Footwear',
-    },
-    {
-      id: 6,
-      name: 'Crew Neck',
-      price: '$99',
-      image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=800&fit=crop&q=80',
-      category: 'Tops',
-    },
-  ]
 
   return (
     <section id="shop" className="py-20 lg:py-32 bg-black text-white">

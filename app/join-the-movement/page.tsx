@@ -141,7 +141,7 @@ export default function JoinTheMovement() {
               You're officially part of something bigger. A community built on culture, confidence, and purpose.
             </p>
             <p className="text-off-white text-sm sm:text-base px-2">
-              Your 10% discount is on its way to your email. Stay tuned. You'll be the first to know when the next drop arrives.
+              Your 15% discount is on its way to your email. Stay tuned. You'll be the first to know when the next drop arrives.
             </p>
           </div>
           <Link
@@ -169,7 +169,7 @@ export default function JoinTheMovement() {
             Join the Movement
           </h1>
           <p className="text-off-white text-sm sm:text-base lg:text-lg px-2">
-            Sign up to be the first to know about new drops from BLACK and get 10% off your next release.
+            Sign up to be the first to know about new drops from BLACK and get 15% off your first order.
           </p>
         </div>
 
