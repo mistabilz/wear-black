@@ -28,7 +28,8 @@ export default function CheckoutPage() {
   const calculateSubtotal = () => {
     return cart.reduce((total, item) => {
       const price = parseFloat(item.price.replace('$', ''))
-      return total + price
+      const quantity = item.quantity || 1
+      return total + price * quantity
     }, 0)
   }
 
@@ -340,9 +341,20 @@ export default function CheckoutPage() {
                         )}
                       </div>
                       <p className="text-xs text-off-white">{item.category}</p>
-                      <p className="text-sm font-medium">
-                        {item.price} {item.currency && <span className="text-xs">{item.currency}</span>}
-                      </p>
+                      {item.color && (
+                        <p className="text-xs text-off-white">Color: {item.color}</p>
+                      )}
+                      {item.size && (
+                        <p className="text-xs text-off-white">Size: {item.size}</p>
+                      )}
+                      <div className="flex items-baseline gap-1 mt-1">
+                        <p className="text-sm font-medium">
+                          {item.price} {item.currency && <span className="text-xs">{item.currency}</span>}
+                        </p>
+                        {item.quantity && item.quantity > 1 && (
+                          <p className="text-xs text-off-white">× {item.quantity}</p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}

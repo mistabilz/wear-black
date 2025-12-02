@@ -10,7 +10,8 @@ export default function CartPage() {
   const calculateSubtotal = () => {
     return cart.reduce((total, item) => {
       const price = parseFloat(item.price.replace('$', ''))
-      return total + price
+      const quantity = item.quantity || 1
+      return total + price * quantity
     }, 0)
   }
 
@@ -85,9 +86,26 @@ export default function CartPage() {
                     )}
                   </div>
                   <p className="text-xs sm:text-sm text-off-white mb-2">{item.category}</p>
-                  <p className="text-white font-medium text-base sm:text-lg">
-                    {item.price} {item.currency && <span className="text-sm">{item.currency}</span>}
-                  </p>
+                  {item.color && (
+                    <p className="text-xs sm:text-sm text-off-white mb-1">
+                      Color: <span className="text-white font-medium">{item.color}</span>
+                    </p>
+                  )}
+                  {item.size && (
+                    <p className="text-xs sm:text-sm text-off-white mb-1">
+                      Size: <span className="text-white font-medium">{item.size}</span>
+                    </p>
+                  )}
+                  <div className="flex items-baseline gap-2 mt-2">
+                    <p className="text-white font-medium text-base sm:text-lg">
+                      {item.price} {item.currency && <span className="text-sm">{item.currency}</span>}
+                    </p>
+                    {item.quantity && item.quantity > 1 && (
+                      <p className="text-xs sm:text-sm text-off-white">
+                        × {item.quantity}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <button

@@ -7,6 +7,8 @@ export interface Product {
   image: string
   category: string
   description: string
+  color?: string
+  size?: string
   isPreOrder?: boolean
   currency?: string
 }
@@ -55,6 +57,7 @@ export const products: Product[] = [
     image: '/images/Pink.PNG',
     category: 'Pre-Order',
     description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    color: 'Pink',
     isPreOrder: true,
     currency: 'CAD',
   },
@@ -66,6 +69,7 @@ export const products: Product[] = [
     image: '/images/Grey.PNG',
     category: 'Pre-Order',
     description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    color: 'Grey',
     isPreOrder: true,
     currency: 'CAD',
   },
@@ -77,6 +81,7 @@ export const products: Product[] = [
     image: '/images/Aqua Blue.JPEG',
     category: 'Pre-Order',
     description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    color: 'Aqua Blue',
     isPreOrder: true,
     currency: 'CAD',
   },

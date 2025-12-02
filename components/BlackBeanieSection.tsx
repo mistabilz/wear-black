@@ -2,52 +2,44 @@
 
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
+import { products } from '@/data/products'
+import { useState } from 'react'
 
 // Price constant
 export const BLACK_BEANIE_PRICE_CAD = 30
 
-interface BeanieVariant {
-  id: number
-  color: string
-  image: string
-  slug: string
-}
-
-const beanieVariants: BeanieVariant[] = [
-  {
-    id: 300,
-    color: 'Pink',
-    image: '/images/Pink.PNG',
-    slug: 'black-beanie-pink',
-  },
-  {
-    id: 301,
-    color: 'Grey',
-    image: '/images/Grey.PNG',
-    slug: 'black-beanie-grey',
-  },
-  {
-    id: 302,
-    color: 'Aqua Blue',
-    image: '/images/Aqua Blue.JPEG',
-    slug: 'black-beanie-aqua',
-  },
-]
-
 export default function BlackBeanieSection() {
   const { addToCart } = useCart()
+  const [addedToCart, setAddedToCart] = useState<number | null>(null)
 
-  const handlePreOrder = (variant: BeanieVariant) => {
-    const product = {
-      id: variant.id,
-      name: `BLACK Beanie - ${variant.color}`,
-      price: `$${BLACK_BEANIE_PRICE_CAD}`,
-      image: variant.image,
-      category: 'Pre-Order',
-      isPreOrder: true,
-      currency: 'CAD',
+  // Get all BLACK BEANIE variants from products data
+  const beanieVariants = products.filter(
+    (p) => p.name === 'BLACK Beanie' && p.isPreOrder
+  )
+
+  const handlePreOrder = (product: typeof products[0]) => {
+    if (!product.color) {
+      alert('Please select a color')
+      return
     }
-    addToCart(product)
+
+    const cartItem = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      category: product.category,
+      color: product.color,
+      quantity: 1,
+      isPreOrder: true,
+      currency: product.currency || 'CAD',
+    }
+    
+    addToCart(cartItem)
+    
+    // Show feedback
+    setAddedToCart(product.id)
+    setTimeout(() => setAddedToCart(null), 2000)
   }
 
   return (
@@ -65,17 +57,17 @@ export default function BlackBeanieSection() {
 
         {/* Beanie Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-          {beanieVariants.map((variant) => (
+          {beanieVariants.map((product) => (
             <div
-              key={variant.id}
+              key={product.id}
               className="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:border-soft-pink/50 transition-all duration-300 group"
             >
               {/* Product Image */}
               <div className="relative w-full flex justify-center items-center bg-black rounded-t-2xl p-6 min-h-[300px] sm:min-h-[350px]">
                 <div className="relative w-full h-full max-h-[400px]">
                   <Image
-                    src={variant.image}
-                    alt={`BLACK Beanie - ${variant.color}`}
+                    src={product.image}
+                    alt={`BLACK Beanie - ${product.color}`}
                     width={400}
                     height={400}
                     className="object-contain w-full h-auto max-h-[400px] group-hover:scale-105 transition-transform duration-500"
@@ -94,22 +86,27 @@ export default function BlackBeanieSection() {
               <div className="p-5 sm:p-6 space-y-4">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-display font-bold uppercase tracking-wide mb-2">
-                    BLACK Beanie
+                    {product.name}
                   </h3>
                   <p className="text-off-white text-sm sm:text-base mb-3">
-                    Color: <span className="text-white font-semibold">{variant.color}</span>
+                    Color: <span className="text-white font-semibold">{product.color}</span>
                   </p>
                   <p className="text-soft-pink text-xl sm:text-2xl font-bold">
-                    ${BLACK_BEANIE_PRICE_CAD} CAD
+                    {product.price} {product.currency}
                   </p>
                 </div>
 
                 {/* Pre-Order Button */}
                 <button
-                  onClick={() => handlePreOrder(variant)}
-                  className="w-full bg-soft-pink text-black px-6 py-3.5 rounded-full font-bold uppercase tracking-wide hover:scale-105 hover:shadow-xl transition-all duration-300 text-sm min-h-[52px]"
+                  onClick={() => handlePreOrder(product)}
+                  className={`w-full px-6 py-3.5 rounded-full font-bold uppercase tracking-wide transition-all duration-300 text-sm min-h-[52px] ${
+                    addedToCart === product.id
+                      ? 'bg-green-500 text-white'
+                      : 'bg-soft-pink text-black hover:scale-105 hover:shadow-xl'
+                  }`}
+                  disabled={addedToCart === product.id}
                 >
-                  Pre-Order Now
+                  {addedToCart === product.id ? '✓ Added to Cart' : 'Pre-Order Now'}
                 </button>
 
                 {/* Shipping Info */}

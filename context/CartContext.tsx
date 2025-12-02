@@ -3,11 +3,14 @@
 import { createContext, useContext, useState, ReactNode } from 'react'
 
 interface CartItem {
-  id: number
+  id: number | string
   name: string
   price: string
   image: string
   category: string
+  quantity?: number
+  color?: string
+  size?: string
   isPreOrder?: boolean
   currency?: string
 }
@@ -17,8 +20,8 @@ interface CartContextType {
   wishlist: CartItem[]
   addToCart: (item: CartItem) => void
   addToWishlist: (item: CartItem) => void
-  removeFromCart: (id: number) => void
-  removeFromWishlist: (id: number) => void
+  removeFromCart: (id: number | string) => void
+  removeFromWishlist: (id: number | string) => void
   clearCart: () => void
 }
 
@@ -29,7 +32,28 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [wishlist, setWishlist] = useState<CartItem[]>([])
 
   const addToCart = (item: CartItem) => {
-    setCart((prev) => [...prev, item])
+    setCart((prev) => {
+      // Check if item with same id and color already exists
+      const existingIndex = prev.findIndex(
+        (cartItem) =>
+          cartItem.id === item.id &&
+          cartItem.color === item.color &&
+          cartItem.size === item.size
+      )
+
+      if (existingIndex > -1) {
+        // Item exists, increment quantity
+        const updated = [...prev]
+        updated[existingIndex] = {
+          ...updated[existingIndex],
+          quantity: (updated[existingIndex].quantity || 1) + (item.quantity || 1),
+        }
+        return updated
+      }
+
+      // New item, add with quantity
+      return [...prev, { ...item, quantity: item.quantity || 1 }]
+    })
   }
 
   const addToWishlist = (item: CartItem) => {
@@ -42,11 +66,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     })
   }
 
-  const removeFromCart = (id: number) => {
+  const removeFromCart = (id: number | string) => {
     setCart((prev) => prev.filter((item) => item.id !== id))
   }
 
-  const removeFromWishlist = (id: number) => {
+  const removeFromWishlist = (id: number | string) => {
     setWishlist((prev) => prev.filter((item) => item.id !== id))
   }
 

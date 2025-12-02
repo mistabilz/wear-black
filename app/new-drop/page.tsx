@@ -11,8 +11,20 @@ export default function NewDropPage() {
   // Get all pre-order products
   const preOrderProducts = products.filter(product => product.isPreOrder)
 
-  const handlePreOrder = (product: any) => {
-    addToCart(product)
+  const handlePreOrder = (product: typeof products[0]) => {
+    const cartItem = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      category: product.category,
+      color: product.color,
+      size: product.size,
+      quantity: 1,
+      isPreOrder: product.isPreOrder,
+      currency: product.currency || 'CAD',
+    }
+    addToCart(cartItem)
   }
 
   return (
@@ -103,6 +115,11 @@ export default function NewDropPage() {
                       <h3 className="text-lg sm:text-xl font-display font-bold uppercase tracking-wide mb-2 line-clamp-2">
                         {product.name}
                       </h3>
+                      {product.color && (
+                        <p className="text-off-white/90 text-sm mb-2">
+                          Color: <span className="text-white font-medium">{product.color}</span>
+                        </p>
+                      )}
                       <p className="text-soft-pink text-xl sm:text-2xl font-bold mb-2">
                         {product.price} {product.currency}
                       </p>
