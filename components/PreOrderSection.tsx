@@ -59,16 +59,19 @@ export default function PreOrderSection() {
           {hoodie && (
             <div className="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:border-soft-pink/50 transition-all duration-300 group">
               {/* Product Image */}
-              <div className="relative h-80 sm:h-96 overflow-hidden bg-black">
-                <Image
-                  src={hoodie.image}
-                  alt="BLACK PANTHER PARTY hoodie"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+              <div className="relative w-full flex justify-center items-center bg-black rounded-t-2xl p-4 min-h-[400px] sm:min-h-[450px]">
+                <div className="relative w-full h-full max-h-[500px]">
+                  <Image
+                    src={hoodie.image}
+                    alt="BLACK PANTHER PARTY hoodie"
+                    width={600}
+                    height={600}
+                    className="object-contain w-full h-auto max-h-[500px] group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
                 {/* Pre-Order Badge */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-4 right-4 z-10">
                   <span className="bg-soft-pink text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide">
                     Pre-Order
                   </span>
@@ -140,16 +143,19 @@ export default function PreOrderSection() {
           {socks && (
             <div className="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:border-soft-pink/50 transition-all duration-300 group">
               {/* Product Image */}
-              <div className="relative h-80 sm:h-96 overflow-hidden bg-black">
-                <Image
-                  src={socks.image}
-                  alt="BLACK socks"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+              <div className="relative w-full flex justify-center items-center bg-black rounded-t-2xl p-4 min-h-[400px] sm:min-h-[450px]">
+                <div className="relative w-full h-full max-h-[500px]">
+                  <Image
+                    src={socks.image}
+                    alt="BLACK socks"
+                    width={600}
+                    height={600}
+                    className="object-contain w-full h-auto max-h-[500px] group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
                 {/* Pre-Order Badge */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-4 right-4 z-10">
                   <span className="bg-soft-pink text-black px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide">
                     Pre-Order
                   </span>
