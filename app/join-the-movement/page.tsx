@@ -1,265 +1,68 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
 import Link from 'next/link'
 
 export default function JoinTheMovement() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    consent: false,
-  })
-  const [errors, setErrors] = useState({
-    fullName: '',
-    email: '',
-    consent: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [serverError, setServerError] = useState('')
-
-  const validateForm = () => {
-    const newErrors = {
-      fullName: '',
-      email: '',
-      consent: '',
-    }
-    let isValid = true
-
-    // Full Name validation
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full name is required'
-      isValid = false
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required'
-      isValid = false
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address'
-      isValid = false
-    }
-
-    // Consent validation
-    if (!formData.consent) {
-      newErrors.consent = 'You must agree to receive messages from BLACK'
-      isValid = false
-    }
-
-    setErrors(newErrors)
-    return isValid
-  }
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setServerError('')
-
-    if (!validateForm()) {
-      return
-    }
-
-    setIsSubmitting(true)
-
-    try {
-      const response = await fetch('/api/join-the-movement', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName.trim(),
-          email: formData.email.trim(),
-          consent: formData.consent,
-        }),
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        setSuccess(true)
-        setFormData({
-          fullName: '',
-          email: '',
-          consent: false,
-        })
-        setErrors({
-          fullName: '',
-          email: '',
-          consent: '',
-        })
-      } else {
-        setServerError(data.error || 'Something went wrong. Please try again.')
-      }
-    } catch (error) {
-      setServerError('Network error. Please check your connection and try again.')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
-  if (success) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16">
-        <div className="max-w-md w-full text-center">
-          <div className="mb-8">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-soft-pink rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg
-                className="w-8 h-8 sm:w-10 sm:h-10 text-black"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={3}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-wide mb-4 px-2">
-              WELCOME TO THE MOVEMENT
-            </h1>
-            <p className="text-off-white text-base sm:text-lg mb-3 px-2">
-              You're officially part of something bigger. A community built on culture, confidence, and purpose.
-            </p>
-            <p className="text-off-white text-sm sm:text-base px-2">
-              Your 15% discount is on its way to your email. Stay tuned. You'll be the first to know when the next drop arrives.
-            </p>
-          </div>
-          <Link
-            href="/"
-            className="block w-full sm:inline-block sm:w-auto bg-white text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm min-h-[48px] flex items-center justify-center"
-          >
-            Back to Home
-          </Link>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16">
-      <div className="max-w-md w-full">
-        <div className="text-center mb-8 sm:mb-10">
-          <Link
-            href="/"
-            className="inline-block text-white font-bold text-xl sm:text-2xl uppercase tracking-wider mb-6 hover:text-soft-pink transition-colors"
-          >
-            BLACK
-          </Link>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white uppercase tracking-wide mb-4 px-2">
-            Join the Movement
+    <div className="min-h-screen bg-black text-white px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+      <div className="container mx-auto max-w-4xl">
+        {/* Page Header */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold uppercase tracking-wide mb-4">
+            Join The Movement
           </h1>
-          <p className="text-off-white text-sm sm:text-base lg:text-lg px-2">
+          <p className="text-off-white text-base sm:text-lg lg:text-xl max-w-2xl mx-auto">
             Sign up to be the first to know about new drops from BLACK and get 15% off your first order.
           </p>
         </div>
 
-        {serverError && (
-          <div className="mb-6 p-4 bg-red-900/20 border border-red-500 rounded-lg">
-            <p className="text-red-400 text-sm">{serverError}</p>
-          </div>
-        )}
+        {/* Google Form Embed */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8">
+          <div className="relative w-full overflow-hidden rounded-lg">
+            {/* Desktop/Tablet iframe */}
+            <div className="hidden sm:block">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdC1xmdFM5co6eNhNvoNvNExM0pSzQ70XY-FI7yQBFZn-Ddsg/viewform?embedded=true"
+                width="100%"
+                height="965"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                className="w-full"
+                title="Join The Movement Form"
+              >
+                Loading…
+              </iframe>
+            </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
-          {/* Full Name */}
-          <div>
-            <label htmlFor="fullName" className="block text-white text-xs sm:text-sm font-semibold mb-2 uppercase tracking-wide">
-              Full Name
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              value={formData.fullName}
-              onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-              className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/30 rounded-lg text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors min-h-[48px]"
-              placeholder="Enter your full name"
-            />
-            {errors.fullName && (
-              <p className="mt-2 text-red-400 text-sm">{errors.fullName}</p>
-            )}
+            {/* Mobile iframe - shorter height for better mobile experience */}
+            <div className="block sm:hidden">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdC1xmdFM5co6eNhNvoNvNExM0pSzQ70XY-FI7yQBFZn-Ddsg/viewform?embedded=true"
+                width="100%"
+                height="800"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                className="w-full"
+                title="Join The Movement Form"
+              >
+                Loading…
+              </iframe>
+            </div>
           </div>
+        </div>
 
-          {/* Email */}
-          <div>
-            <label htmlFor="email" className="block text-white text-xs sm:text-sm font-semibold mb-2 uppercase tracking-wide">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/30 rounded-lg text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-1 focus:ring-soft-pink transition-colors min-h-[48px]"
-              placeholder="your@email.com"
-            />
-            {errors.email && (
-              <p className="mt-2 text-red-400 text-sm">{errors.email}</p>
-            )}
-          </div>
-
-          {/* Consent Checkbox */}
-          <div>
-            <label className="flex items-start cursor-pointer">
-              <input
-                type="checkbox"
-                checked={formData.consent}
-                onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                className="mt-0.5 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded border-white/30 bg-white/10 text-soft-pink focus:ring-soft-pink focus:ring-offset-0 cursor-pointer"
-              />
-              <span className="ml-3 text-white/90 text-sm sm:text-base leading-relaxed">
-                I agree to receive product messages, updates, and discounts from BLACK.
-              </span>
-            </label>
-            {errors.consent && (
-              <p className="mt-2 text-red-400 text-sm">{errors.consent}</p>
-            )}
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-soft-pink text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-h-[48px] flex items-center justify-center"
+        {/* Back to Home Link */}
+        <div className="text-center mt-8 sm:mt-12">
+          <Link
+            href="/"
+            className="inline-block text-off-white hover:text-white text-sm sm:text-base underline transition-colors"
           >
-            {isSubmitting ? (
-              <span className="flex items-center justify-center">
-                <svg
-                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-black"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
-                Signing Up...
-              </span>
-            ) : (
-              'Sign Up'
-            )}
-          </button>
-
-          <p className="text-center text-white/60 text-sm">
-            You can unsubscribe at any time.
-          </p>
-        </form>
+            ← Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   )
 }
-
