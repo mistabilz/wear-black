@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import PreOrderSection from '@/components/PreOrderSection'
 import About from '@/components/About'
 import Footer from '@/components/Footer'
 import SignupModal from '@/components/SignupModal'
@@ -40,6 +41,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <PreOrderSection />
       <About />
       <Footer />
       <SignupModal isOpen={showModal} onClose={() => setShowModal(false)} />

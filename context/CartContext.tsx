@@ -8,6 +8,8 @@ interface CartItem {
   price: string
   image: string
   category: string
+  isPreOrder?: boolean
+  currency?: string
 }
 
 interface CartContextType {

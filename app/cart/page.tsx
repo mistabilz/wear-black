@@ -74,11 +74,20 @@ export default function CartPage() {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-base sm:text-lg font-semibold uppercase tracking-wide mb-1 truncate">
-                    {item.name}
-                  </h3>
+                  <div className="flex items-start gap-2 mb-1">
+                    <h3 className="text-base sm:text-lg font-semibold uppercase tracking-wide truncate">
+                      {item.name}
+                    </h3>
+                    {item.isPreOrder && (
+                      <span className="inline-block bg-soft-pink text-black px-2 py-0.5 rounded text-xs font-bold uppercase whitespace-nowrap">
+                        Pre-Order
+                      </span>
+                    )}
+                  </div>
                   <p className="text-xs sm:text-sm text-off-white mb-2">{item.category}</p>
-                  <p className="text-white font-medium text-base sm:text-lg">{item.price}</p>
+                  <p className="text-white font-medium text-base sm:text-lg">
+                    {item.price} {item.currency && <span className="text-sm">{item.currency}</span>}
+                  </p>
                 </div>
 
                 <button

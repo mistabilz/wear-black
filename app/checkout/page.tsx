@@ -331,9 +331,18 @@ export default function CheckoutPage() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-sm font-semibold uppercase">{item.name}</h4>
+                      <div className="flex items-start gap-1 mb-1">
+                        <h4 className="text-sm font-semibold uppercase">{item.name}</h4>
+                        {item.isPreOrder && (
+                          <span className="inline-block bg-soft-pink text-black px-1.5 py-0.5 rounded text-[10px] font-bold uppercase whitespace-nowrap">
+                            Pre-Order
+                          </span>
+                        )}
+                      </div>
                       <p className="text-xs text-off-white">{item.category}</p>
-                      <p className="text-sm font-medium">{item.price}</p>
+                      <p className="text-sm font-medium">
+                        {item.price} {item.currency && <span className="text-xs">{item.currency}</span>}
+                      </p>
                     </div>
                   </div>
                 ))}
