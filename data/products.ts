@@ -40,7 +40,7 @@ export const products: Product[] = [
     id: 200,
     name: 'Unisex Tracksuit',
     slug: 'unisex-tracksuit',
-    price: '$0', // To be updated
+    price: '$120',
     image: '/images/Unisex Tracksuit.jpg',
     category: 'Tracksuits',
     description: 'Built for movement, made for every body. Premium quality tracksuit designed for comfort and style.',
@@ -51,7 +51,7 @@ export const products: Product[] = [
     id: 300,
     name: 'BLACK Beanie',
     slug: 'black-beanie-pink',
-    price: '$0', // To be updated
+    price: '$30',
     image: '/images/Pink.PNG',
     category: 'Pre-Order',
     description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
@@ -62,7 +62,7 @@ export const products: Product[] = [
     id: 301,
     name: 'BLACK Beanie',
     slug: 'black-beanie-grey',
-    price: '$0', // To be updated
+    price: '$30',
     image: '/images/Grey.PNG',
     category: 'Pre-Order',
     description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
@@ -73,7 +73,7 @@ export const products: Product[] = [
     id: 302,
     name: 'BLACK Beanie',
     slug: 'black-beanie-aqua',
-    price: '$0', // To be updated
+    price: '$30',
     image: '/images/Aqua Blue.JPEG',
     category: 'Pre-Order',
     description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',

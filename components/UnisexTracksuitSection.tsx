@@ -4,8 +4,8 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
 
-// Price constant - to be updated later
-const UNISEX_TRACKSUIT_PRICE = 0
+// Price constant
+export const UNISEX_TRACKSUIT_PRICE_CAD = 120
 
 export default function UnisexTracksuitSection() {
   const { addToCart } = useCart()
@@ -21,7 +21,7 @@ export default function UnisexTracksuitSection() {
     const product = {
       id: 200,
       name: `Unisex Tracksuit - ${selectedColor} - ${selectedSize}`,
-      price: `$${UNISEX_TRACKSUIT_PRICE}`,
+      price: `$${UNISEX_TRACKSUIT_PRICE_CAD}`,
       image: '/images/Unisex Tracksuit.jpg',
       category: 'Tracksuits',
       currency: 'CAD',
@@ -64,7 +64,7 @@ export default function UnisexTracksuitSection() {
                     Built for movement, made for every body.
                   </p>
                   <p className="text-soft-pink text-2xl sm:text-3xl font-bold">
-                    ${UNISEX_TRACKSUIT_PRICE} CAD
+                    ${UNISEX_TRACKSUIT_PRICE_CAD} CAD
                   </p>
                 </div>
 
@@ -183,7 +183,7 @@ export default function UnisexTracksuitSection() {
                   Unisex Tracksuit - {selectedColor} - Size {selectedSize}
                 </p>
                 <p className="text-soft-pink text-lg font-bold mt-2">
-                  ${UNISEX_TRACKSUIT_PRICE} CAD
+                  ${UNISEX_TRACKSUIT_PRICE_CAD} CAD
                 </p>
               </div>
 

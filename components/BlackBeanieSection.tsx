@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
 
-// Price constant - to be updated later
-const BLACK_BEANIE_PRICE_CAD = 0
+// Price constant
+export const BLACK_BEANIE_PRICE_CAD = 30
 
 interface BeanieVariant {
   id: number

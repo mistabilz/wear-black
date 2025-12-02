@@ -44,8 +44,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <PreOrderSection />
-      <UnisexTracksuitSection />
       <BlackBeanieSection />
+      <UnisexTracksuitSection />
       <About />
       <Footer />
       <SignupModal isOpen={showModal} onClose={() => setShowModal(false)} />

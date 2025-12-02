@@ -173,7 +173,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="#new-drop"
+              href="/new-drop"
               className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
             >
               New Drop
@@ -296,7 +296,7 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="#new-drop"
+                href="/new-drop"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
               >
