@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import PreOrderSection from '@/components/PreOrderSection'
+import UnisexTracksuitSection from '@/components/UnisexTracksuitSection'
+import BlackBeanieSection from '@/components/BlackBeanieSection'
 import About from '@/components/About'
 import Footer from '@/components/Footer'
 import SignupModal from '@/components/SignupModal'
@@ -42,6 +44,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <PreOrderSection />
+      <UnisexTracksuitSection />
+      <BlackBeanieSection />
       <About />
       <Footer />
       <SignupModal isOpen={showModal} onClose={() => setShowModal(false)} />

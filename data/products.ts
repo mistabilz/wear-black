@@ -35,6 +35,51 @@ export const products: Product[] = [
     isPreOrder: true,
     currency: 'CAD',
   },
+  // SHOP LOOK PRODUCTS
+  {
+    id: 200,
+    name: 'Unisex Tracksuit',
+    slug: 'unisex-tracksuit',
+    price: '$0', // To be updated
+    image: '/images/Unisex Tracksuit.jpg',
+    category: 'Tracksuits',
+    description: 'Built for movement, made for every body. Premium quality tracksuit designed for comfort and style.',
+    currency: 'CAD',
+  },
+  // BLACK BEANIE PRE-ORDER VARIANTS
+  {
+    id: 300,
+    name: 'BLACK Beanie',
+    slug: 'black-beanie-pink',
+    price: '$0', // To be updated
+    image: '/images/Pink.PNG',
+    category: 'Pre-Order',
+    description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    isPreOrder: true,
+    currency: 'CAD',
+  },
+  {
+    id: 301,
+    name: 'BLACK Beanie',
+    slug: 'black-beanie-grey',
+    price: '$0', // To be updated
+    image: '/images/Grey.PNG',
+    category: 'Pre-Order',
+    description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    isPreOrder: true,
+    currency: 'CAD',
+  },
+  {
+    id: 302,
+    name: 'BLACK Beanie',
+    slug: 'black-beanie-aqua',
+    price: '$0', // To be updated
+    image: '/images/Aqua Blue.JPEG',
+    category: 'Pre-Order',
+    description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    isPreOrder: true,
+    currency: 'CAD',
+  },
   // REGULAR PRODUCTS
   {
     id: 1,
