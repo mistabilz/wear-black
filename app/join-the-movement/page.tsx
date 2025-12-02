@@ -53,13 +53,13 @@ export default function JoinTheMovement() {
           </div>
         </div>
 
-        {/* Back to Home Link */}
-        <div className="text-center mt-8 sm:mt-12">
+        {/* Back to Home Button */}
+        <div className="mt-6 sm:mt-8">
           <Link
             href="/"
-            className="inline-block text-off-white hover:text-white text-sm sm:text-base underline transition-colors"
+            className="block w-full sm:w-auto sm:max-w-md sm:mx-auto bg-[#F7B6C8] hover:bg-[#f5a3ba] text-black font-bold uppercase tracking-wide py-3 rounded-full text-center transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
-            ← Back to Home
+            Back to Home
           </Link>
         </div>
       </div>
