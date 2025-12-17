@@ -119,12 +119,14 @@ export default function Footer() {
               Follow Us
             </h3>
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="#"
+              <a
+                href="https://www.instagram.com/wearblack.ca/?igsh=Mm96MWY0MWdhMmRm&utm_source=qr#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/70 hover:text-white transition-colors text-sm"
               >
                 Instagram
-              </Link>
+              </a>
               <Link
                 href="#"
                 className="text-white/70 hover:text-white transition-colors text-sm"
