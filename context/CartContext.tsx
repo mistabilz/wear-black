@@ -11,7 +11,6 @@ interface CartItem {
   quantity?: number
   color?: string
   size?: string
-  isPreOrder?: boolean
   currency?: string
 }
 

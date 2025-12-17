@@ -9,34 +9,10 @@ export interface Product {
   description: string
   color?: string
   size?: string
-  isPreOrder?: boolean
   currency?: string
 }
 
 export const products: Product[] = [
-  // PRE-ORDER PRODUCTS
-  {
-    id: 100,
-    name: 'BLACK PANTHER PARTY Hoodie',
-    slug: 'black-panther-party-hoodie',
-    price: '$200',
-    image: '/images/BLACK PANTHER PARTY.jpg',
-    category: 'Pre-Order',
-    description: 'Limited edition hoodie inspired by the spirit of the Black Panther Party. Heavyweight, bold, and built for statement makers.',
-    isPreOrder: true,
-    currency: 'CAD',
-  },
-  {
-    id: 101,
-    name: 'BLACK Socks',
-    slug: 'black-socks',
-    price: '$20',
-    image: '/images/BLACK SOCKS.jpg',
-    category: 'Pre-Order',
-    description: 'Everyday BLACK socks for comfort, style, and movement. Designed to stay soft and breathable all day.',
-    isPreOrder: true,
-    currency: 'CAD',
-  },
   // SHOP LOOK PRODUCTS
   {
     id: 200,
@@ -46,40 +22,6 @@ export const products: Product[] = [
     image: '/images/Unisex Tracksuit.jpg',
     category: 'Tracksuits',
     description: 'Built for movement, made for every body. Premium quality tracksuit designed for comfort and style.',
-    currency: 'CAD',
-  },
-  // BLACK BEANIE VARIANTS
-  {
-    id: 300,
-    name: 'BLACK Beanie',
-    slug: 'black-beanie-pink',
-    price: '$30',
-    image: '/images/Pink.PNG',
-    category: 'Accessories',
-    description: 'Limited run beanie. Choose your shade and own your look.',
-    color: 'Pink',
-    currency: 'CAD',
-  },
-  {
-    id: 301,
-    name: 'BLACK Beanie',
-    slug: 'black-beanie-grey',
-    price: '$30',
-    image: '/images/Grey.PNG',
-    category: 'Accessories',
-    description: 'Limited run beanie. Choose your shade and own your look.',
-    color: 'Grey',
-    currency: 'CAD',
-  },
-  {
-    id: 302,
-    name: 'BLACK Beanie',
-    slug: 'black-beanie-aqua',
-    price: '$30',
-    image: '/images/Aqua Blue.JPEG',
-    category: 'Accessories',
-    description: 'Limited run beanie. Choose your shade and own your look.',
-    color: 'Aqua Blue',
     currency: 'CAD',
   },
   // REGULAR PRODUCTS

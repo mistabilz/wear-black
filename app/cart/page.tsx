@@ -79,11 +79,6 @@ export default function CartPage() {
                     <h3 className="text-base sm:text-lg font-semibold uppercase tracking-wide truncate">
                       {item.name}
                     </h3>
-                    {item.isPreOrder && (
-                      <span className="inline-block bg-soft-pink text-black px-2 py-0.5 rounded text-xs font-bold uppercase whitespace-nowrap">
-                        Pre-Order
-                      </span>
-                    )}
                   </div>
                   <p className="text-xs sm:text-sm text-off-white mb-2">{item.category}</p>
                   {item.color && (

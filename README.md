@@ -9,7 +9,7 @@ A modern, luxury streetwear e-commerce website built with Next.js 14, TypeScript
 - 🛒 Shopping cart functionality with item count indicators
 - ❤️ Wishlist functionality with visual indicators
 - 🖼️ Image gallery and lookbook sections
-- 🎯 Multiple sections: Hero, New Drop, Featured Collections, About, Shop, Lookbook
+- 🎯 Multiple sections: Hero, Featured Collections, About, Shop, Lookbook
 - ⚡ Built with Next.js 14 App Router
 - 🎨 Styled with Tailwind CSS
 
@@ -58,12 +58,10 @@ npm run dev
 ├── components/
 │   ├── Navbar.tsx       # Navigation bar with cart/wishlist
 │   ├── Hero.tsx         # Hero section with CTA
-│   ├── NewDrop.tsx      # New collection section
-│   ├── Featured.tsx     # Featured collections
+│   ├── UnisexTracksuitSection.tsx  # Featured tracksuit section
 │   ├── About.tsx        # Brand story section
-│   ├── Shop.tsx         # Product grid with add to cart/wishlist
-│   ├── Lookbook.tsx     # Style gallery
-│   └── Footer.tsx        # Footer with links
+│   ├── SignupModal.tsx  # Newsletter signup modal
+│   └── Footer.tsx       # Footer with links
 ├── context/
 │   └── CartContext.tsx  # Cart and wishlist state management
 └── public/
