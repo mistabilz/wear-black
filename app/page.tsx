@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import UnisexTracksuitSection from '@/components/UnisexTracksuitSection'
 import About from '@/components/About'
 import Footer from '@/components/Footer'
 import SignupModal from '@/components/SignupModal'
@@ -41,7 +40,6 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <UnisexTracksuitSection />
       <About />
       <Footer />
       <SignupModal isOpen={showModal} onClose={() => setShowModal(false)} />

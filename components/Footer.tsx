@@ -152,12 +152,9 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-white/10 pt-8 space-y-6">
           {/* Country & Currency */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center justify-center">
             <div className="text-white/70 text-sm">
               Canada (CAD $)
-            </div>
-            <div className="text-white/70 text-sm">
-              Email: <a href="mailto:info@wearblack.ca" className="hover:text-white transition-colors">info@wearblack.ca</a>
             </div>
           </div>
 

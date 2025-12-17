@@ -58,7 +58,7 @@ npm run dev
 ├── components/
 │   ├── Navbar.tsx       # Navigation bar with cart/wishlist
 │   ├── Hero.tsx         # Hero section with CTA
-│   ├── UnisexTracksuitSection.tsx  # Featured product visual
+│   ├── SignupModal.tsx     # Newsletter signup modal
 │   ├── About.tsx        # Brand story section
 │   ├── SignupModal.tsx  # Newsletter signup modal
 │   └── Footer.tsx       # Footer with links

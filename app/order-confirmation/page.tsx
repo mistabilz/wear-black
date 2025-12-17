@@ -102,15 +102,6 @@ export default function OrderConfirmationPage() {
           </Link>
         </div>
 
-        {/* Contact Info */}
-        <div className="mt-12 text-center">
-          <p className="text-off-white text-sm">
-            Questions about your order?{' '}
-            <a href="mailto:info@wearblack.ca" className="text-white hover:text-soft-pink transition-colors underline">
-              Contact us
-            </a>
-          </p>
-        </div>
       </div>
     </div>
   )
