@@ -31,7 +31,7 @@ export default function About() {
                     BLACK is unity. BLACK is movement. BLACK is purpose.
                   </p>
                   <p>
-                    Don't just wear it. Live it. And even if you're not Black, when you stand with us, you're part of us.
+                    Don't just wear it. Live it. And even if you're not Black, when you stand with us, you're part of us. Wear it.
                   </p>
                 </div>
               </div>
