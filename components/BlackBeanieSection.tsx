@@ -14,10 +14,10 @@ export default function BlackBeanieSection() {
 
   // Get all BLACK BEANIE variants from products data
   const beanieVariants = products.filter(
-    (p) => p.name === 'BLACK Beanie' && p.isPreOrder
+    (p) => p.name === 'BLACK Beanie'
   )
 
-  const handlePreOrder = (product: typeof products[0]) => {
+  const handleAddToCart = (product: typeof products[0]) => {
     if (!product.color) {
       alert('Please select a color')
       return
@@ -31,7 +31,6 @@ export default function BlackBeanieSection() {
       category: product.category,
       color: product.color,
       quantity: 1,
-      isPreOrder: true,
       currency: product.currency || 'CAD',
     }
     
@@ -48,10 +47,10 @@ export default function BlackBeanieSection() {
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold uppercase tracking-wide mb-4">
-            BLACK Beanie – Pre-Order
+            BLACK Beanie
           </h2>
           <p className="text-off-white text-base sm:text-lg max-w-2xl mx-auto">
-            Limited run. Choose your shade and secure your beanie before it drops.
+            Limited run. Choose your shade and own your look.
           </p>
         </div>
 
@@ -74,12 +73,6 @@ export default function BlackBeanieSection() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                {/* Pre-Order Badge */}
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="bg-soft-pink text-black px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
-                    Pre-Order
-                  </span>
-                </div>
               </div>
 
               {/* Product Info */}
@@ -96,9 +89,9 @@ export default function BlackBeanieSection() {
                   </p>
                 </div>
 
-                {/* Pre-Order Button */}
+                {/* Add to Cart Button */}
                 <button
-                  onClick={() => handlePreOrder(product)}
+                  onClick={() => handleAddToCart(product)}
                   className={`w-full px-6 py-3.5 rounded-full font-bold uppercase tracking-wide transition-all duration-300 text-sm min-h-[52px] ${
                     addedToCart === product.id
                       ? 'bg-green-500 text-white'
@@ -106,12 +99,12 @@ export default function BlackBeanieSection() {
                   }`}
                   disabled={addedToCart === product.id}
                 >
-                  {addedToCart === product.id ? '✓ Added to Cart' : 'Pre-Order Now'}
+                  {addedToCart === product.id ? '✓ Added to Cart' : 'Add to Cart'}
                 </button>
 
                 {/* Shipping Info */}
                 <p className="text-xs text-off-white/70 text-center italic">
-                  Ships soon - exact date confirmed by email
+                  Free shipping on orders over $100
                 </p>
               </div>
             </div>

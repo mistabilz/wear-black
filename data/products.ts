@@ -48,17 +48,16 @@ export const products: Product[] = [
     description: 'Built for movement, made for every body. Premium quality tracksuit designed for comfort and style.',
     currency: 'CAD',
   },
-  // BLACK BEANIE PRE-ORDER VARIANTS
+  // BLACK BEANIE VARIANTS
   {
     id: 300,
     name: 'BLACK Beanie',
     slug: 'black-beanie-pink',
     price: '$30',
     image: '/images/Pink.PNG',
-    category: 'Pre-Order',
-    description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    category: 'Accessories',
+    description: 'Limited run beanie. Choose your shade and own your look.',
     color: 'Pink',
-    isPreOrder: true,
     currency: 'CAD',
   },
   {
@@ -67,10 +66,9 @@ export const products: Product[] = [
     slug: 'black-beanie-grey',
     price: '$30',
     image: '/images/Grey.PNG',
-    category: 'Pre-Order',
-    description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    category: 'Accessories',
+    description: 'Limited run beanie. Choose your shade and own your look.',
     color: 'Grey',
-    isPreOrder: true,
     currency: 'CAD',
   },
   {
@@ -79,10 +77,9 @@ export const products: Product[] = [
     slug: 'black-beanie-aqua',
     price: '$30',
     image: '/images/Aqua Blue.JPEG',
-    category: 'Pre-Order',
-    description: 'Limited run beanie. Choose your shade and secure your beanie before it drops.',
+    category: 'Accessories',
+    description: 'Limited run beanie. Choose your shade and own your look.',
     color: 'Aqua Blue',
-    isPreOrder: true,
     currency: 'CAD',
   },
   // REGULAR PRODUCTS

@@ -60,11 +60,8 @@ export default function UnisexTracksuitSection() {
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold uppercase tracking-wide mb-4">
                     Unisex Tracksuit
                   </h2>
-                  <p className="text-off-white text-base sm:text-lg lg:text-xl mb-6">
+                  <p className="text-off-white text-base sm:text-lg lg:text-xl">
                     Built for movement, made for every body.
-                  </p>
-                  <p className="text-soft-pink text-2xl sm:text-3xl font-bold">
-                    ${UNISEX_TRACKSUIT_PRICE_CAD} CAD
                   </p>
                 </div>
 
@@ -181,9 +178,6 @@ export default function UnisexTracksuitSection() {
                 <p className="text-sm text-off-white mb-2">Your Selection:</p>
                 <p className="text-white font-semibold">
                   Unisex Tracksuit - {selectedColor} - Size {selectedSize}
-                </p>
-                <p className="text-soft-pink text-lg font-bold mt-2">
-                  ${UNISEX_TRACKSUIT_PRICE_CAD} CAD
                 </p>
               </div>
 
