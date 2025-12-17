@@ -31,8 +31,8 @@ export default function Hero() {
               </h1>
 
               {/* Tagline */}
-              <p className="text-off-white text-sm drop-shadow-lg">
-                Streetwear stitched with culture, confidence, and community.
+              <p className="text-off-white text-sm drop-shadow-lg uppercase tracking-wide">
+                WEAR IT BLACK. WEAR IT BOLD.
               </p>
 
               {/* CTA Button */}
@@ -77,8 +77,8 @@ export default function Hero() {
                 </h1>
 
                 {/* Tagline */}
-                <p className="text-off-white text-base lg:text-lg xl:text-xl max-w-xl mb-8 lg:mb-10 drop-shadow-lg">
-                  Streetwear stitched with culture, confidence, and community.
+                <p className="text-off-white text-base lg:text-lg xl:text-xl max-w-xl mb-8 lg:mb-10 drop-shadow-lg uppercase tracking-wide">
+                  WEAR IT BLACK. WEAR IT BOLD.
                 </p>
 
                 {/* CTA Button */}

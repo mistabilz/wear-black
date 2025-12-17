@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'BLACK - Streetwear',
     template: '%s | BLACK',
   },
-  description: 'Streetwear stitched with culture, confidence, and community. Built from Black culture. Made for the world.',
+  description: 'WEAR IT BLACK. WEAR IT BOLD. Built from Black culture. Made for the world.',
   keywords: ['streetwear', 'black culture', 'fashion', 'clothing', 'apparel', 'BLACK brand', 'wearblack'],
   authors: [{ name: 'BLACK' }],
   creator: 'BLACK',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: 'BLACK',
     title: 'BLACK - Streetwear',
-    description: 'Streetwear stitched with culture, confidence, and community. Built from Black culture. Made for the world.',
+    description: 'WEAR IT BLACK. WEAR IT BOLD. Built from Black culture. Made for the world.',
     images: [
       {
         url: '/images/heroimagedesktop169.JPG',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'BLACK - Streetwear',
-    description: 'Streetwear stitched with culture, confidence, and community. Built from Black culture. Made for the world.',
+    description: 'WEAR IT BLACK. WEAR IT BOLD. Built from Black culture. Made for the world.',
     images: ['/images/heroimagedesktop169.JPG'],
   },
   robots: {
