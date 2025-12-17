@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="relative w-full bg-black min-h-[90vh]">
           <Image
             src={HERO_IMAGE_PATH}
-            alt="BLACK Hero - Luxury streetwear models"
+            alt="BLACK Hero - Streetwear models"
             fill
             priority
             className="object-cover object-center"
@@ -32,7 +32,7 @@ export default function Hero() {
 
               {/* Tagline */}
               <p className="text-off-white text-sm drop-shadow-lg">
-                Luxury streetwear stitched with culture, confidence, and community.
+                Streetwear stitched with culture, confidence, and community.
               </p>
 
               {/* CTA Button */}
@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="relative w-full h-screen max-h-[900px]">
           <Image
             src={HERO_IMAGE_PATH}
-            alt="BLACK Hero - Luxury streetwear models"
+            alt="BLACK Hero - Streetwear models"
             fill
             className="object-cover object-center"
             priority
@@ -78,7 +78,7 @@ export default function Hero() {
 
                 {/* Tagline */}
                 <p className="text-off-white text-base lg:text-lg xl:text-xl max-w-xl mb-8 lg:mb-10 drop-shadow-lg">
-                  Luxury streetwear stitched with culture, confidence, and community.
+                  Streetwear stitched with culture, confidence, and community.
                 </p>
 
                 {/* CTA Button */}

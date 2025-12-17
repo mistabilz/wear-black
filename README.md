@@ -1,10 +1,10 @@
-# BLACK - Luxury Streetwear Website
+# BLACK - Streetwear Website
 
-A modern, luxury streetwear e-commerce website built with Next.js 14, TypeScript, and Tailwind CSS.
+A modern streetwear e-commerce website built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- 🎨 Dark, luxury aesthetic with black backgrounds and soft pink accents
+- 🎨 Dark, premium aesthetic with black backgrounds and soft pink accents
 - 📱 Fully responsive design (mobile-first)
 - 🛒 Shopping cart functionality with item count indicators
 - ❤️ Wishlist functionality with visual indicators
@@ -58,7 +58,7 @@ npm run dev
 ├── components/
 │   ├── Navbar.tsx       # Navigation bar with cart/wishlist
 │   ├── Hero.tsx         # Hero section with CTA
-│   ├── UnisexTracksuitSection.tsx  # Featured tracksuit section
+│   ├── UnisexTracksuitSection.tsx  # Featured product visual
 │   ├── About.tsx        # Brand story section
 │   ├── SignupModal.tsx  # Newsletter signup modal
 │   └── Footer.tsx       # Footer with links

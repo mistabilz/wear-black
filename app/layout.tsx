@@ -3,8 +3,8 @@ import './globals.css'
 import { CartProvider } from '@/context/CartContext'
 
 export const metadata: Metadata = {
-  title: 'BLACK - Luxury Streetwear',
-  description: 'Luxury streetwear stitched with culture, confidence, and community.',
+  title: 'BLACK - Streetwear',
+  description: 'Streetwear stitched with culture, confidence, and community.',
 }
 
 export default function RootLayout({

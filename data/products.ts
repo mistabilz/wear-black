@@ -13,17 +13,6 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  // SHOP LOOK PRODUCTS
-  {
-    id: 200,
-    name: 'Unisex Tracksuit',
-    slug: 'unisex-tracksuit',
-    price: '$120',
-    image: '/images/Unisex Tracksuit.jpg',
-    category: 'Tracksuits',
-    description: 'Built for movement, made for every body. Premium quality tracksuit designed for comfort and style.',
-    currency: 'CAD',
-  },
   // REGULAR PRODUCTS
   {
     id: 1,
@@ -50,7 +39,7 @@ export const products: Product[] = [
     price: '$129',
     image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&h=800&fit=crop&q=80',
     category: 'Bottoms',
-    description: 'Luxury streetwear pants with perfect fit and comfort.',
+    description: 'Premium streetwear pants with perfect fit and comfort.',
   },
   {
     id: 4,
