@@ -2,16 +2,11 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLanguage } from '@/context/LanguageContext'
-import { usePathname } from 'next/navigation'
 
 // Updated hero image - desktop 16:9 aspect ratio
 const HERO_IMAGE_PATH = '/images/heroimagedesktop169.JPG'
 
 export default function Hero() {
-  const { t, locale } = useLanguage()
-  const pathname = usePathname()
-  const currentLocale = pathname?.split('/')[1] || locale || 'en'
   return (
     <section id="home" className="relative w-full bg-black pt-16 md:pt-0">
       {/* MOBILE LAYOUT: Stacked (image + text below) - NO OVERLAP */}
@@ -34,21 +29,21 @@ export default function Hero() {
             <div className="max-w-lg mx-auto w-full text-center space-y-3 sm:space-y-4 backdrop-blur-sm bg-black/20 p-4 sm:p-6 rounded-2xl">
               {/* Main Headline */}
               <h1 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white uppercase tracking-wide leading-tight drop-shadow-2xl break-words">
-                {t('hero.headline')}
+                BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.
               </h1>
 
               {/* Tagline */}
               <p className="text-off-white text-xs sm:text-sm drop-shadow-lg uppercase tracking-wide break-words">
-                {t('hero.tagline')}
+                WEAR IT BLACK. WEAR IT BOLD.
               </p>
 
               {/* CTA Button */}
               <div className="pt-2">
                 <Link
-                  href={`/${currentLocale}/join-the-movement`}
+                  href="/join-the-movement"
                   className="block w-full max-w-xs mx-auto bg-soft-pink text-black px-6 py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm text-center min-h-[48px] flex items-center justify-center"
                 >
-                  {t('hero.cta')}
+                  Join the Movement
                 </Link>
               </div>
             </div>
@@ -78,21 +73,21 @@ export default function Hero() {
               <div className="max-w-2xl mx-auto">
                 {/* Main Headline */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight mb-4 sm:mb-6 lg:mb-8 drop-shadow-2xl break-words">
-                  {t('hero.headline')}
+                  BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.
                 </h1>
 
                 {/* Tagline */}
                 <p className="text-off-white text-sm sm:text-base lg:text-lg xl:text-xl max-w-xl mb-6 sm:mb-8 lg:mb-10 drop-shadow-lg uppercase tracking-wide break-words">
-                  {t('hero.tagline')}
+                  WEAR IT BLACK. WEAR IT BOLD.
                 </p>
 
                 {/* CTA Button */}
                 <div>
                   <Link
-                    href={`/${currentLocale}/join-the-movement`}
+                    href="/join-the-movement"
                     className="inline-flex items-center justify-center bg-soft-pink text-black px-8 py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base min-h-[48px]"
                   >
-                    {t('hero.cta')}
+                    Join the Movement
                   </Link>
                 </div>
               </div>

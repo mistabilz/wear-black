@@ -1,32 +1,18 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const locales = ['en', 'fr']
-const defaultLocale = 'en'
-
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Skip middleware for API routes, static files, and Next.js internals
-  if (
-    pathname.startsWith('/api') ||
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/images') ||
-    pathname === '/favicon.ico'
-  ) {
-    return NextResponse.next()
+  // Redirect old locale routes to non-locale routes
+  if (pathname.startsWith('/en/') || pathname.startsWith('/fr/')) {
+    const newPath = pathname.replace(/^\/(en|fr)/, '') || '/'
+    return NextResponse.redirect(new URL(newPath, request.url))
   }
 
-  // Check if pathname already has a locale
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
-
-  // If no locale in pathname, redirect to default locale
-  if (!pathnameHasLocale) {
-    const locale = defaultLocale
-    const newUrl = new URL(`/${locale}${pathname === '/' ? '' : pathname}`, request.url)
-    return NextResponse.redirect(newUrl)
+  // Redirect root locale paths
+  if (pathname === '/en' || pathname === '/fr') {
+    return NextResponse.redirect(new URL('/', request.url))
   }
 
   return NextResponse.next()
