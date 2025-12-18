@@ -34,7 +34,7 @@ export default function About() {
             <div className="pt-12 sm:pt-14 lg:pt-16 text-center">
               <Link
                 href="/join-the-movement"
-                className="inline-block bg-soft-pink text-black px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold uppercase tracking-wider hover:opacity-90 transition-opacity duration-300 text-xs sm:text-sm text-center min-h-[36px] flex items-center justify-center"
+                className="inline-block bg-soft-pink text-black px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-extrabold uppercase tracking-wider hover:opacity-90 transition-opacity duration-300 text-base sm:text-lg text-center min-h-[36px] flex items-center justify-center"
               >
                 Sign Up
               </Link>
