@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { CartProvider } from '@/context/CartContext'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://wearblack.ca'
 
@@ -65,6 +66,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-black text-white antialiased">
         <CartProvider>
+          <ScrollToTop />
           {children}
         </CartProvider>
       </body>
