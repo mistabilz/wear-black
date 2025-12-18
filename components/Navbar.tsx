@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useCart } from '@/context/CartContext'
+import { useLanguage } from '@/context/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const router = useRouter()
@@ -11,6 +13,7 @@ export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const { cart, wishlist } = useCart()
+  const { t } = useLanguage()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -67,6 +70,7 @@ export default function Navbar() {
 
           {/* Icons - Reduced gap on small screens */}
           <div className="flex items-center gap-2 sm:gap-3">
+            <LanguageSwitcher />
             {/* Search Icon */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -170,24 +174,25 @@ export default function Navbar() {
               href="#home"
               className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
             >
-              Home
+              {t('nav.home')}
             </Link>
             <Link
               href="#about"
               className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
             >
-              About
+              {t('nav.about')}
             </Link>
             <Link
               href="#shop"
               className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
             >
-              Shop
+              {t('nav.shop')}
             </Link>
           </div>
 
           {/* Icons */}
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             {/* Search Icon */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -287,21 +292,21 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
               >
-                Home
+                {t('nav.home')}
               </Link>
               <Link
                 href="#about"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
               >
-                About
+                {t('nav.about')}
               </Link>
               <Link
                 href="#shop"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
               >
-                Shop
+                {t('nav.shop')}
               </Link>
             </div>
           </div>

@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "Our Story",
+    "lookbook": "Lookbook"
+  },
+  "hero": {
+    "headline": "BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.",
+    "tagline": "WEAR IT BLACK. WEAR IT BOLD.",
+    "cta": "Join the Movement"
+  },
+  "about": {
+    "title": "OUR STORY",
+    "paragraph1": "BLACK is more than a name. It's a voice, a rhythm, a movement. Rooted in Black culture, created for every shade, every shape, every soul bold enough to be seen.",
+    "paragraph2": "When you wear BLACK, you carry both history and the future, the confidence, the creativity, and the unshakable pride of a culture that shaped the world.",
+    "paragraph3": "This isn't exclusion; it's inclusion with intention. If you believe in our rise, you belong here.",
+    "paragraph4": "BLACK is unity. BLACK is movement. BLACK is purpose.",
+    "paragraph5": "Don't just wear it. Live it. And even if you're not Black, when you stand with us, you're part of us. Wear it!",
+    "signUp": "Sign Up"
+  },
+  "footer": {
+    "company": "Company",
+    "ourStory": "Our Story",
+    "privacy": "Privacy & Cookies",
+    "returns": "Return Policy",
+    "help": "Help",
+    "shipping": "Shipping",
+    "contact": "Contact",
+    "getConnected": "Get Connected",
+    "joinMovement": "Join the Movement",
+    "careers": "Career Opportunities",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 BLACK. All rights reserved."
+  },
+  "common": {
+    "search": "Search",
+    "cart": "Cart",
+    "wishlist": "Wishlist",
+    "account": "Account",
+    "login": "Login",
+    "register": "Register"
+  }
+}
+

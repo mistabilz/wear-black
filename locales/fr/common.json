@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "about": "Notre Histoire",
+    "lookbook": "Lookbook"
+  },
+  "hero": {
+    "headline": "CRÉÉ PAR LA CULTURE NOIRE. FAIT POUR LE MONDE.",
+    "tagline": "PORTEZ-LE NOIR. PORTEZ-LE AUDACIEUSEMENT.",
+    "cta": "Rejoignez le Mouvement"
+  },
+  "about": {
+    "title": "NOTRE HISTOIRE",
+    "paragraph1": "BLACK est plus qu'un nom. C'est une voix, un rythme, un mouvement. Enraciné dans la culture noire, créé pour chaque teinte, chaque forme, chaque âme assez audacieuse pour être vue.",
+    "paragraph2": "Quand vous portez BLACK, vous portez à la fois l'histoire et l'avenir, la confiance, la créativité et la fierté inébranlable d'une culture qui a façonné le monde.",
+    "paragraph3": "Ce n'est pas de l'exclusion; c'est de l'inclusion avec intention. Si vous croyez en notre ascension, vous appartenez ici.",
+    "paragraph4": "BLACK est l'unité. BLACK est le mouvement. BLACK est le but.",
+    "paragraph5": "Ne le portez pas seulement. Vivez-le. Et même si vous n'êtes pas Noir, quand vous vous tenez avec nous, vous faites partie de nous. Portez-le!",
+    "signUp": "S'inscrire"
+  },
+  "footer": {
+    "company": "Entreprise",
+    "ourStory": "Notre Histoire",
+    "privacy": "Confidentialité et Cookies",
+    "returns": "Politique de Retour",
+    "help": "Aide",
+    "shipping": "Livraison",
+    "contact": "Contact",
+    "getConnected": "Restez Connecté",
+    "joinMovement": "Rejoignez le Mouvement",
+    "careers": "Opportunités de Carrière",
+    "followUs": "Suivez-nous",
+    "copyright": "© 2024 BLACK. Tous droits réservés."
+  },
+  "common": {
+    "search": "Rechercher",
+    "cart": "Panier",
+    "wishlist": "Liste de Souhaits",
+    "account": "Compte",
+    "login": "Connexion",
+    "register": "S'inscrire"
+  }
+}
+

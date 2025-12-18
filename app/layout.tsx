@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { CartProvider } from '@/context/CartContext'
+import LocaleProvider from './LocaleProvider'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://wearblack.ca'
 
@@ -65,7 +66,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-black text-white antialiased">
         <CartProvider>
-          {children}
+          <LocaleProvider>
+            {children}
+          </LocaleProvider>
         </CartProvider>
       </body>
     </html>
