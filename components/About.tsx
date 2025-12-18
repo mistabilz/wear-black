@@ -22,7 +22,7 @@ export default function About() {
               <p>
                 This isn't exclusion; it's inclusion with intention. If you believe in our rise, you belong here.
               </p>
-              <p className="text-white/90 font-medium tracking-wide">
+              <p className="text-white/95 font-light tracking-wide my-6 sm:my-8">
                 BLACK is unity. BLACK is movement. BLACK is purpose.
               </p>
               <p>
