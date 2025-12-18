@@ -7,17 +7,17 @@ export default function About() {
   const { t } = useLanguage()
   
   return (
-    <section id="about" className="w-full bg-black text-white">
-      <div className="min-h-screen flex items-center justify-center py-20 sm:py-24 lg:py-32 xl:py-40">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+    <section id="about" className="w-full bg-black text-white overflow-hidden">
+      <div className="min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto">
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] mb-8 sm:mb-10 lg:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] mb-6 sm:mb-8 md:mb-10 lg:mb-12 break-words">
               {t('about.title')}
             </h2>
             
             {/* Story Text Block */}
-            <div className="text-white/80 sm:text-white/85 text-base sm:text-lg lg:text-xl xl:text-[22px] leading-relaxed sm:leading-8 lg:leading-9 tracking-wide font-light antialiased space-y-4">
+            <div className="text-white/80 sm:text-white/85 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px] leading-relaxed sm:leading-7 md:leading-8 lg:leading-9 tracking-wide font-light antialiased space-y-3 sm:space-y-4">
               <p>
                 {t('about.paragraph1')}
               </p>
@@ -36,10 +36,10 @@ export default function About() {
             </div>
             
             {/* Sign Up Button - Smaller size */}
-            <div className="pt-12 sm:pt-14 lg:pt-16 text-center">
+            <div className="pt-8 sm:pt-10 md:pt-12 lg:pt-14 text-center">
               <Link
                 href="/join-the-movement"
-                className="inline-block bg-soft-pink text-black px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-black uppercase tracking-widest hover:opacity-90 transition-opacity duration-300 text-xl sm:text-2xl text-center min-h-[36px] flex items-center justify-center"
+                className="inline-block bg-soft-pink text-black px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 rounded-full font-black uppercase tracking-widest hover:opacity-90 transition-opacity duration-300 text-base sm:text-lg md:text-xl lg:text-2xl text-center min-h-[44px] sm:min-h-[48px] flex items-center justify-center break-words"
               >
                 {t('about.signUp')}
               </Link>

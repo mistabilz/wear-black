@@ -27,15 +27,15 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
           
           {/* Text Content Overlaid on Mobile - positioned lower */}
-          <div className="absolute inset-0 flex flex-col justify-end pb-12 px-4">
-            <div className="max-w-lg mx-auto text-center space-y-4 backdrop-blur-sm bg-black/20 p-6 rounded-2xl">
+          <div className="absolute inset-0 flex flex-col justify-end pb-8 sm:pb-12 px-4 sm:px-6">
+            <div className="max-w-lg mx-auto w-full text-center space-y-3 sm:space-y-4 backdrop-blur-sm bg-black/20 p-4 sm:p-6 rounded-2xl">
               {/* Main Headline */}
-              <h1 className="text-2xl sm:text-3xl font-display font-bold text-white uppercase tracking-wide leading-tight drop-shadow-2xl">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white uppercase tracking-wide leading-tight drop-shadow-2xl break-words">
                 {t('hero.headline')}
               </h1>
 
               {/* Tagline */}
-              <p className="text-off-white text-sm drop-shadow-lg uppercase tracking-wide">
+              <p className="text-off-white text-xs sm:text-sm drop-shadow-lg uppercase tracking-wide break-words">
                 {t('hero.tagline')}
               </p>
 
@@ -71,15 +71,15 @@ export default function Hero() {
           
           {/* Content Overlay on Desktop */}
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full px-8 lg:px-16 xl:px-24">
-              <div className="max-w-2xl">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
+              <div className="max-w-2xl mx-auto">
                 {/* Main Headline */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight mb-6 lg:mb-8 drop-shadow-2xl">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight mb-4 sm:mb-6 lg:mb-8 drop-shadow-2xl break-words">
                   {t('hero.headline')}
                 </h1>
 
                 {/* Tagline */}
-                <p className="text-off-white text-base lg:text-lg xl:text-xl max-w-xl mb-8 lg:mb-10 drop-shadow-lg uppercase tracking-wide">
+                <p className="text-off-white text-sm sm:text-base lg:text-lg xl:text-xl max-w-xl mb-6 sm:mb-8 lg:mb-10 drop-shadow-lg uppercase tracking-wide break-words">
                   {t('hero.tagline')}
                 </p>
 

@@ -35,24 +35,24 @@ export default function Lookbook() {
   ]
 
   return (
-    <section id="lookbook" className="py-20 lg:py-32 bg-black text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-display font-bold uppercase tracking-wide mb-4">
+    <section id="lookbook" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-black text-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold uppercase tracking-wide mb-3 sm:mb-4 break-words">
             Lookbook
           </h2>
-          <p className="text-off-white text-lg max-w-2xl mx-auto">
+          <p className="text-off-white text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
             Style inspiration from the streets to the runway.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {looks.map((look) => (
             <div
               key={look.id}
               className="group relative overflow-hidden rounded-lg"
             >
-              <div className="relative h-[600px] lg:h-[700px]">
+              <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]">
                 <Image
                   src={look.image}
                   alt={look.title}

@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white border-t border-white/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+    <footer className="bg-black text-white border-t border-white/10 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 max-w-7xl">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-8 sm:mb-10 md:mb-12">
           {/* Company Section */}
           <div>
             <h3 className="text-white font-bold uppercase tracking-wide mb-4 text-sm">
@@ -159,7 +159,7 @@ export default function Footer() {
           </div>
 
           {/* Payment Methods */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             <div className="bg-white/10 rounded-md px-4 py-2 text-xs text-white/70">
               Visa
             </div>

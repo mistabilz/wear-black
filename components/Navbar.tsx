@@ -36,11 +36,11 @@ export default function Navbar() {
           {/* Hamburger Menu */}
           <button
             onClick={toggleMenu}
-            className="text-white hover:text-soft-pink transition-colors p-1 -ml-1"
+            className="text-white hover:text-soft-pink transition-colors p-2 -ml-1 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-6 h-6 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -64,12 +64,12 @@ export default function Navbar() {
           </button>
 
           {/* Logo */}
-          <Link href="#home" className="text-white font-bold text-lg sm:text-xl uppercase tracking-wider">
+          <Link href="#home" className="text-white font-bold text-base sm:text-lg md:text-xl uppercase tracking-wider flex-shrink-0">
             BLACK
           </Link>
 
           {/* Icons - Reduced gap on small screens */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <LanguageSwitcher />
             {/* Search Icon */}
             <button
@@ -290,21 +290,21 @@ export default function Navbar() {
               <Link
                 href="#home"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
+                className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide py-2 min-h-[44px] flex items-center"
               >
                 {t('nav.home')}
               </Link>
               <Link
                 href="#about"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
+                className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide py-2 min-h-[44px] flex items-center"
               >
                 {t('nav.about')}
               </Link>
               <Link
                 href="#shop"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
+                className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide py-2 min-h-[44px] flex items-center"
               >
                 {t('nav.shop')}
               </Link>
@@ -324,11 +324,11 @@ export default function Navbar() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search products or stories..."
                     autoFocus
-                    className="w-full px-6 py-4 bg-white/10 border-2 border-white/30 rounded-full text-white text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-2 focus:ring-soft-pink/50 transition-all"
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-white/10 border-2 border-white/30 rounded-full text-white text-sm sm:text-base placeholder-white/50 focus:outline-none focus:border-soft-pink focus:ring-2 focus:ring-soft-pink/50 transition-all"
                   />
                   <button
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-soft-pink text-black px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-all"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-soft-pink text-black px-4 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm hover:scale-105 transition-all min-h-[44px]"
                   >
                     Search
                   </button>

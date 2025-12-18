@@ -9,24 +9,24 @@ export default function Shop() {
   const { addToCart, addToWishlist, cart, wishlist } = useCart()
 
   return (
-    <section id="shop" className="py-20 lg:py-32 bg-black text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-display font-bold uppercase tracking-wide mb-4">
+    <section id="shop" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-black text-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold uppercase tracking-wide mb-3 sm:mb-4 break-words">
             Shop The Collection
           </h2>
-          <p className="text-off-white text-lg max-w-2xl mx-auto">
+          <p className="text-off-white text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
             Premium streetwear crafted for those who demand excellence.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {products.map((product) => {
             const isInWishlist = wishlist.some((item) => item.id === product.id)
             return (
               <div key={product.id} className="group">
                 <Link href="#" className="block">
-                  <div className="relative h-[500px] lg:h-[600px] mb-4 rounded-lg overflow-hidden">
+                  <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px] mb-3 sm:mb-4 rounded-lg overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -100,10 +100,10 @@ export default function Shop() {
           })}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-10 md:mt-12">
           <Link
             href="#"
-            className="inline-block border border-white/30 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wide text-sm font-semibold"
+            className="inline-block border border-white/30 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wide text-xs sm:text-sm font-semibold min-h-[44px] flex items-center justify-center"
           >
             View All Products
           </Link>

@@ -49,7 +49,7 @@ export default function Home() {
         <About />
       </main>
       <Footer />
-      {showModal && <SignupModal onClose={handleCloseModal} />}
+      <SignupModal isOpen={showModal} onClose={handleCloseModal} />
     </>
   )
 }

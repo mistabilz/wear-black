@@ -27,25 +27,25 @@ export default function Featured() {
   ]
 
   return (
-    <section className="py-20 lg:py-32 bg-black text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-display font-bold uppercase tracking-wide mb-4">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-black text-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold uppercase tracking-wide mb-3 sm:mb-4 break-words">
             Featured Collections
           </h2>
-          <p className="text-off-white text-lg max-w-2xl mx-auto">
+          <p className="text-off-white text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
             Discover our curated selections, each telling a unique story of culture and style.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {collections.map((collection) => (
             <Link
               key={collection.id}
               href={collection.href}
               className="group relative overflow-hidden rounded-lg"
             >
-              <div className="relative h-[500px] lg:h-[600px]">
+              <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px]">
                 <Image
                   src={collection.image}
                   alt={collection.title}
