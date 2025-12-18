@@ -12,13 +12,13 @@ export default function Hero() {
       {/* MOBILE LAYOUT: Stacked (image + text below) - NO OVERLAP */}
       <div className="md:hidden">
         {/* Hero Image - Clear and visible on mobile, minimal overlay */}
-        <div className="relative w-full bg-black min-h-[90vh]">
+        <div className="relative w-full bg-black min-h-[70vh] sm:min-h-[80vh]">
           <Image
             src={HERO_IMAGE_PATH}
             alt="BLACK Hero - Streetwear models"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="100vw"
           />
           {/* Very light overlay - just for text contrast */}
