@@ -3,12 +3,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { usePathname } from 'next/navigation'
 
 // Updated hero image - desktop 16:9 aspect ratio
 const HERO_IMAGE_PATH = '/images/heroimagedesktop169.JPG'
 
 export default function Hero() {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
+  const pathname = usePathname()
+  const currentLocale = pathname?.split('/')[1] || locale || 'en'
   return (
     <section id="home" className="relative w-full bg-black pt-16 md:pt-0">
       {/* MOBILE LAYOUT: Stacked (image + text below) - NO OVERLAP */}
@@ -42,7 +45,7 @@ export default function Hero() {
               {/* CTA Button */}
               <div className="pt-2">
                 <Link
-                  href="/join-the-movement"
+                  href={`/${currentLocale}/join-the-movement`}
                   className="block w-full max-w-xs mx-auto bg-soft-pink text-black px-6 py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm text-center min-h-[48px] flex items-center justify-center"
                 >
                   {t('hero.cta')}
@@ -86,7 +89,7 @@ export default function Hero() {
                 {/* CTA Button */}
                 <div>
                   <Link
-                    href="/join-the-movement"
+                    href={`/${currentLocale}/join-the-movement`}
                     className="inline-flex items-center justify-center bg-soft-pink text-black px-8 py-3.5 rounded-full font-semibold uppercase tracking-wide hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base min-h-[48px]"
                   >
                     {t('hero.cta')}

@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
+import { useLanguage } from '@/context/LanguageContext'
 
 interface SignupModalProps {
   isOpen: boolean
@@ -10,6 +11,9 @@ interface SignupModalProps {
 
 export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
   const router = useRouter()
+  const pathname = usePathname()
+  const { locale } = useLanguage()
+  const currentLocale = pathname?.split('/')[1] || locale || 'en'
 
   // Close on Escape key
   useEffect(() => {
@@ -37,8 +41,8 @@ export default function SignupModal({ isOpen, onClose }: SignupModalProps) {
   const handleSignup = () => {
     // Mark modal as seen
     localStorage.setItem('hasSeenSignupModal', 'true')
-    // Navigate to the Google Form page
-    router.push('/join-the-movement')
+    // Navigate to the Google Form page with locale
+    router.push(`/${currentLocale}/join-the-movement`)
     onClose()
   }
 

@@ -2,9 +2,12 @@
 
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
+import { usePathname } from 'next/navigation'
 
 export default function About() {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
+  const pathname = usePathname()
+  const currentLocale = pathname?.split('/')[1] || locale || 'en'
   
   return (
     <section id="about" className="w-full bg-black text-white overflow-hidden">
@@ -38,7 +41,7 @@ export default function About() {
             {/* Sign Up Button - Smaller size */}
             <div className="pt-8 sm:pt-10 md:pt-12 lg:pt-14 text-center">
               <Link
-                href="/join-the-movement"
+                href={`/${currentLocale}/join-the-movement`}
                 className="inline-block bg-soft-pink text-black px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 rounded-full font-black uppercase tracking-widest hover:opacity-90 transition-opacity duration-300 text-base sm:text-lg md:text-xl lg:text-2xl text-center min-h-[44px] sm:min-h-[48px] flex items-center justify-center break-words"
               >
                 {t('about.signUp')}
