@@ -12,18 +12,21 @@ export default function Hero() {
       {/* MOBILE LAYOUT: Hero image with tagline/button at bottom */}
       <div className="md:hidden">
         {/* Hero Image Container - Starts directly under navbar */}
-        <div className="relative w-full bg-black pt-16 min-h-[55vh] sm:min-h-[70vh]">
+        <div className="relative w-full bg-black pt-16 min-h-[70vh] sm:min-h-[80vh] flex flex-col justify-end">
           <Image
             src={HERO_IMAGE_PATH}
             alt="BLACK Hero - Streetwear models"
             fill
             priority
-            className="object-contain object-top"
+            className="object-contain object-center"
             sizes="100vw"
           />
           
-          {/* Tagline and CTA at bottom of hero image - absolute positioning */}
-          <div className="absolute bottom-6 left-0 right-0 z-10 px-4 sm:px-6">
+          {/* Subtle dark gradient overlay at bottom for text readability - NO BLUR */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
+          
+          {/* Tagline and CTA at bottom of hero image */}
+          <div className="relative z-10 pb-8 sm:pb-12 px-4 sm:px-6">
             <div className="max-w-lg mx-auto w-full text-center space-y-3 sm:space-y-4">
               {/* Main Headline */}
               <h1 className="text-xl sm:text-2xl font-display font-bold text-white uppercase tracking-wide leading-tight drop-shadow-2xl break-words">
@@ -51,19 +54,22 @@ export default function Hero() {
 
       {/* DESKTOP/TABLET LAYOUT: Premium hero with tagline/button at bottom */}
       <div className="hidden md:block relative w-full">
-        {/* Full Hero Image - Never crops models */}
-        <div className="relative w-full min-h-[70vh] md:min-h-[80vh] lg:min-h-[85vh]">
+        {/* Full Hero Image */}
+        <div className="relative w-full min-h-[85vh] lg:min-h-screen flex flex-col justify-end">
           <Image
             src={HERO_IMAGE_PATH}
             alt="BLACK Hero - Streetwear models"
             fill
-            className="object-contain object-top"
+            className="object-cover object-center"
             priority
             sizes="100vw"
           />
           
-          {/* Tagline and CTA at bottom of hero image - absolute positioning */}
-          <div className="absolute bottom-8 md:bottom-12 lg:bottom-16 left-0 right-0 z-10 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
+          {/* Subtle dark gradient overlay at bottom for text readability - NO BLUR */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
+          
+          {/* Tagline and CTA at bottom of hero image */}
+          <div className="relative z-10 pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
             <div className="max-w-2xl mx-auto text-center space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight drop-shadow-2xl break-words">
