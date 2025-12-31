@@ -8,83 +8,40 @@ const HERO_IMAGE_PATH = '/images/heroimagedesktop169.JPG'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full bg-black">
-      {/* MOBILE LAYOUT: Image + text below (no overlay) */}
-      <div className="md:hidden">
-        {/* Hero Image - Full image visible, no cropping */}
-        <div className="relative w-full bg-black pt-16 min-h-[55vh]">
-          <Image
-            src={HERO_IMAGE_PATH}
-            alt="BLACK Hero - Streetwear models"
-            fill
-            priority
-            className="object-contain object-center"
-            sizes="100vw"
-          />
-        </div>
-        
-        {/* Text Content - Below image, no blur */}
-        <div className="w-full bg-black py-8 sm:py-10 px-4 sm:px-6">
-          <div className="max-w-lg mx-auto w-full text-center space-y-4 sm:space-y-5">
-            {/* Main Headline */}
-            <h1 className="text-xl sm:text-2xl font-display font-bold text-white uppercase tracking-wide leading-tight break-words">
-              BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.
-            </h1>
-
-            {/* Tagline */}
-            <p className="text-off-white text-xs sm:text-sm uppercase tracking-wide break-words">
-              WEAR IT BLACK. WEAR IT BOLD.
-            </p>
-
-            {/* CTA Button */}
-            <div className="mt-5">
-              <Link
-                href="/join-the-movement"
-                className="inline-block w-full max-w-xs mx-auto rounded-full bg-soft-pink text-black font-extrabold tracking-[0.25em] text-sm px-10 py-4 hover:scale-105 hover:shadow-lg transition-all duration-300 text-center min-h-[48px] flex items-center justify-center"
-              >
-                JOIN THE MOVEMENT
-              </Link>
-            </div>
-          </div>
-        </div>
+    <section id="home" className="relative w-full bg-black overflow-hidden">
+      {/* Full-bleed Hero Image Container */}
+      <div className="relative w-screen left-1/2 -translate-x-1/2 bg-black overflow-hidden h-[70vh] sm:h-[75vh] lg:h-[85vh] max-h-[900px] pt-16 md:pt-0">
+        <Image
+          src={HERO_IMAGE_PATH}
+          alt="BLACK Hero - Streetwear models"
+          fill
+          priority
+          className="object-contain object-center"
+          sizes="100vw"
+        />
       </div>
+      
+      {/* Text Content Section - Below image, tight spacing */}
+      <div className="w-full bg-black text-white text-center px-6 py-10 sm:py-12">
+        <div className="max-w-2xl mx-auto space-y-4">
+          {/* Main Headline */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-wide leading-tight break-words uppercase">
+            BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.
+          </h1>
 
-      {/* DESKTOP/TABLET LAYOUT: Image + text at bottom */}
-      <div className="hidden md:block relative w-full bg-black">
-        {/* Hero Image - Full image visible, no cropping */}
-        <div className="relative w-full bg-black min-h-[70vh]">
-          <Image
-            src={HERO_IMAGE_PATH}
-            alt="BLACK Hero - Streetwear models"
-            fill
-            className="object-contain object-center"
-            priority
-            sizes="100vw"
-          />
-        </div>
-        
-        {/* Text Content - At bottom of hero section, below image, no blur */}
-        <div className="w-full bg-black py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
-          <div className="max-w-2xl mx-auto text-center space-y-6 sm:space-y-8">
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white uppercase tracking-wide leading-tight break-words">
-              BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.
-            </h1>
+          {/* Tagline */}
+          <p className="mt-4 text-sm sm:text-base tracking-[0.35em] uppercase text-white/80">
+            WEAR IT BLACK. WEAR IT BOLD.
+          </p>
 
-            {/* Tagline */}
-            <p className="text-off-white text-sm sm:text-base lg:text-lg xl:text-xl max-w-xl uppercase tracking-wide break-words">
-              WEAR IT BLACK. WEAR IT BOLD.
-            </p>
-
-            {/* CTA Button */}
-            <div className="mt-5">
-              <Link
-                href="/join-the-movement"
-                className="inline-block rounded-full bg-soft-pink text-black font-extrabold tracking-[0.25em] text-sm md:text-base px-10 py-4 hover:scale-105 hover:shadow-lg transition-all duration-300 min-h-[48px] flex items-center justify-center"
-              >
-                JOIN THE MOVEMENT
-              </Link>
-            </div>
+          {/* CTA Button */}
+          <div className="mt-8">
+            <Link
+              href="/join-the-movement"
+              className="inline-flex items-center justify-center rounded-full bg-soft-pink px-10 py-4 text-base sm:text-lg font-extrabold tracking-[0.25em] uppercase text-black hover:opacity-90 transition-opacity duration-300"
+            >
+              JOIN THE MOVEMENT
+            </Link>
           </div>
         </div>
       </div>
