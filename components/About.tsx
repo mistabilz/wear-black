@@ -17,19 +17,26 @@ export default function About() {
             {/* Story Text Block */}
             <div className="text-white/80 sm:text-white/85 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px] leading-relaxed sm:leading-7 md:leading-8 lg:leading-9 tracking-wide font-light antialiased space-y-3 sm:space-y-4">
               <p>
-                BLACK is more than a name. It's a voice, a rhythm, a movement. Rooted in Black culture, created for every shade, every shape, every soul bold enough to be seen.
+                BLACK is more than a name.
+                It is a voice, a rhythm, a movement.
               </p>
               <p>
-                When you wear BLACK, you carry both history and the future, the confidence, the creativity, and the unshakable pride of a culture that shaped the world.
+                Rooted in Black culture and created for every shade, every shape, and every soul bold enough to be seen. BLACK turns identity into expression and purpose into action. Every piece reflects confidence, creativity, and the pride of a culture that has shaped the world.
               </p>
               <p>
-                This isn't exclusion; it's inclusion with intention. If you believe in our rise, you belong here.
+                BLACK goes beyond fashion. With every purchase, a portion is dedicated to supporting orphans across Africa, creating opportunities, care, and hope for children whose futures deserve to be protected. What you wear becomes a statement not only of style, but of responsibility and impact.
+              </p>
+              <p>
+                This is not exclusion. It is inclusion with intention. BLACK welcomes those who believe in empowerment, dignity, and collective growth, and those who understand that progress is strongest when it is shared.
               </p>
               <p className="text-white/95 font-light tracking-wide my-6 sm:my-8">
-                BLACK is unity. BLACK is movement. BLACK is purpose.
+                BLACK is unity.
+                BLACK is movement.
+                BLACK is purpose.
               </p>
               <p>
-                Don't just wear it. Live it. And even if you're not Black, when you stand with us, you're part of us. Wear it!
+                Do not just wear it. Live it.
+                When you stand with BLACK, you stand for purpose, community, and progress.
               </p>
             </div>
             
