@@ -9,9 +9,9 @@ export default function Shop() {
   const { addToCart, addToWishlist, cart, wishlist } = useCart()
 
   return (
-    <section id="shop" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-black text-white overflow-hidden scroll-mt-[72px]">
+    <section id="shop" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="text-left mb-8 sm:mb-12 md:mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold uppercase tracking-wide mb-3 sm:mb-4 break-words">
             Shop The Collection
           </h2>
