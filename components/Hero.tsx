@@ -10,20 +10,22 @@ export default function Hero() {
   return (
     <section id="home" className="w-screen bg-black mt-4 sm:mt-6 md:mt-8">
       {/* Hero Image Container - Aspect-ratio ONLY, no viewport height */}
-      <div className="relative w-screen bg-black aspect-[3/4] sm:aspect-[16/9] min-h-0">
-        <Image
-          src={HERO_IMAGE_PATH}
-          alt="BLACK Hero - Streetwear models"
-          fill
-          priority
-          sizes="100vw"
-          className="object-contain object-[center_top] sm:object-center"
-          style={{ objectFit: 'contain', objectPosition: 'center top' }}
-        />
+      <div className="w-screen bg-black">
+        <div className="relative w-full bg-black aspect-[3/4] sm:aspect-[16/9] min-h-0 mx-auto sm:max-w-[95%] md:max-w-[90%] lg:max-w-[85%] xl:max-w-[80%]">
+          <Image
+            src={HERO_IMAGE_PATH}
+            alt="BLACK Hero - Streetwear models"
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain object-[center_top] sm:object-center"
+            style={{ objectFit: 'contain', objectPosition: 'center top' }}
+          />
+        </div>
       </div>
 
-      {/* Text Block - Attached, no gap */}
-      <div className="w-screen bg-black text-center py-10 px-4">
+      {/* Text Block - Closer to image edge */}
+      <div className="w-screen bg-black text-center pt-4 sm:pt-6 md:pt-8 pb-10 px-4">
         <h1 className="text-white text-2xl sm:text-4xl font-display font-bold tracking-wide leading-tight break-words uppercase">
           BUILT FROM BLACK CULTURE. MADE FOR THE WORLD.
         </h1>
