@@ -157,7 +157,7 @@ export default function Navbar() {
           {/* Menu Links - Left aligned */}
           <div className="flex items-center gap-8">
             <Link
-              href="#home"
+              href="#about"
               className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
             >
               Home
@@ -172,7 +172,7 @@ export default function Navbar() {
               href="#shop"
               className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide"
             >
-              Shop
+              Shop Now
             </Link>
           </div>
 
@@ -273,7 +273,7 @@ export default function Navbar() {
           <div className="lg:hidden mt-4 pb-4 border-t border-white/10">
             <div className="flex flex-col gap-4 pt-4">
               <Link
-                href="#home"
+                href="#about"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide py-2 min-h-[44px] flex items-center"
               >
@@ -291,7 +291,7 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white hover:text-soft-pink transition-colors text-sm uppercase tracking-wide py-2 min-h-[44px] flex items-center"
               >
-                Shop
+                Shop Now
               </Link>
             </div>
           </div>
