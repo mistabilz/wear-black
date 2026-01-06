@@ -29,7 +29,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full h-[72px] bg-black z-50">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 h-full flex items-center">
         {/* Mobile Layout */}
-        <div className="flex items-center justify-between lg:hidden">
+        <div className="flex items-center justify-between lg:hidden w-full">
           {/* Hamburger Menu */}
           <button
             onClick={toggleMenu}
@@ -60,13 +60,8 @@ export default function Navbar() {
             </svg>
           </button>
 
-          {/* Logo */}
-          <Link href="#home" className="text-white font-bold text-base sm:text-lg md:text-xl uppercase tracking-wider flex-shrink-0">
-            BLACK
-          </Link>
-
-          {/* Icons - Reduced gap on small screens */}
-          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+          {/* Icons - Right aligned */}
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0 ml-auto">
             {/* Search Icon */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -158,13 +153,8 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:flex items-center justify-between">
-          {/* Logo */}
-          <Link href="#home" className="text-white font-bold text-xl uppercase tracking-wider hover:text-soft-pink transition-colors">
-            BLACK
-          </Link>
-
-          {/* Menu Links */}
+        <div className="hidden lg:flex items-center justify-between w-full">
+          {/* Menu Links - Left aligned */}
           <div className="flex items-center gap-8">
             <Link
               href="#home"
@@ -186,8 +176,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Icons */}
-          <div className="flex items-center gap-3">
+          {/* Icons - Right aligned */}
+          <div className="flex items-center gap-3 ml-auto">
             {/* Search Icon */}
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
