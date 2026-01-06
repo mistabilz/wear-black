@@ -9,14 +9,15 @@ const HERO_IMAGE_PATH = '/images/heroimagedesktop169.JPG'
 export default function Hero() {
   return (
     <section id="home" className="relative w-full bg-black overflow-hidden">
-      {/* Full-bleed Hero Image Container - No side gaps */}
-      <div className="relative w-screen left-1/2 -translate-x-1/2 bg-black overflow-hidden min-h-[320px] sm:min-h-[420px] lg:min-h-[560px] pt-16 md:pt-0">
+      {/* Full-bleed Hero Image Container - No side gaps, full image visible */}
+      <div className="relative w-screen left-1/2 -translate-x-1/2 bg-black overflow-hidden aspect-[3/4] sm:aspect-[16/9] min-h-0 pt-16 md:pt-0">
         <Image
           src={HERO_IMAGE_PATH}
           alt="BLACK Hero - Streetwear models"
           fill
           priority
-          className="object-cover object-top"
+          className="object-contain object-[center_top] sm:object-center"
+          style={{ objectFit: 'contain', objectPosition: 'center top' }}
           sizes="100vw"
         />
       </div>
