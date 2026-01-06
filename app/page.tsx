@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-[72px]">
+      <main>
         <Hero />
         <About />
       </main>

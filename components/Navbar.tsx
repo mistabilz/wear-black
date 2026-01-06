@@ -26,8 +26,8 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 w-full h-[72px] bg-black z-50">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 h-full flex items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         {/* Mobile Layout */}
         <div className="flex items-center justify-between lg:hidden">
           {/* Hamburger Menu */}
